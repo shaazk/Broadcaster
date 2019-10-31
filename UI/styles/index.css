@@ -1,0 +1,84 @@
+.div1{
+    height: 150px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+
+}
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* .img {
+    height: 80px;
+    width: 30px;
+} */
+
+.div2{
+    width: 20%;
+    height: 40px;
+    float: left;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+
+}
+.div3{
+    padding: 1rem;
+    margin-left: 40px;
+    height: auto;
+    width: 20%;
+
+}
+.d1{
+    width:48% ;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+    height: 160px;;
+    float: left;
+    margin-top: 16px;
+
+}
+
+.d2{
+    margin-left: 50%;
+    /* float: right; */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+    width:48% ;
+    height: 160px;
+
+
+
+}
+
+.img1{
+    vertical-align: middle;
+    margin-bottom: 0.75em;
+    width: 30%;
+
+}
+
+.text{
+font-size: 12px;
+
+}
+.two a{
+    text-decoration: none;
+    color: red;
+}
+
+.img1{
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.two span{
+    font-size: 14px;
+    font-weight: 500;
+}
+
+@media (max-width: 800px) {
+  .text{
+    font-size: 7px;
+    
+    }
+    .two span{
+        font-size: 10px;
+    }
+  }
