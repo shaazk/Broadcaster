@@ -1,79 +1,106 @@
-input[type=text], select, textarea,input[type=number],input[type=date]{
+input[type="text"],
+select,
+textarea,
+input[type="number"],
+input[type="date"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: vertical;
+}
+#title {
+  /* font-weight: bold; */
+  font-size: 18px;
+  font-style: italic;
+}
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+  font-weight: bold;
+}
+.col1 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col2 {
+  float: left;
+  width: 75%;
+  margin-top: 0;
+}
+.col2 span {
+  margin-left: 15px;
+}
+
+.info input {
+  width: 50%;
+}
+.row {
+  padding-bottom: 20px;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.info a {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+button {
+  background-color: rgb(226, 55, 55);
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+button:hover {
+  opacity: 1;
+}
+button a {
+  color: white;
+  text-decoration: none;
+}
+.cancelbtn {
+  padding: 14px 20px;
+  background-color: #4a5568;
+}
+.cancelbtn,
+.submitbtn {
+  float: left;
+  width: 50%;
+}
+.btn::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+@media screen and (max-width: 300px) {
+  .cancelbtn,
+  .submitbtn {
     width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    resize: vertical;
   }
-  #title{
-      /* font-weight: bold; */
-      font-size: 18px;
-      font-style: italic;
-  }
-  label {
-    padding: 12px 12px 12px 0;
-    display: inline-block;
-    font-weight: bold;
-    
-  }
-  
-  input[type=submit] {
-    background-color: rgb(212, 23, 23);
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    float: right;
-  }
-  
-  
-  .col1 {
-    float: left;
-    width: 25%;
-    margin-top: 6px;
-  }
-  
-  .col2 {
-    float: left;
-    width: 75%;
+}
+
+@media screen and (max-width: 600px) {
+  .col1,
+  .col2,
+  input[type="submit"] {
+    width: 100%;
     margin-top: 0;
-    
   }
-  .col2 span{
-    margin-left: 15px;
-  
+}
+@media screen and (min-width: 2024px) {
+  div {
+    font-size: 40px;
   }
-
-  .info input{
-      width: 50%;
-  }
-  .row{
-    padding-bottom: 20px;
-
-  }
-  .row:after {
-    content: "";
-    display: table;
-    clear: both;
-
-  }
-  .info a{
-      color: black;
-      text-decoration: none;
-      cursor: pointer;
-
-  }
-
-  @media screen and (max-width: 600px) {
-    .col1, .col2, input[type=submit] {
-      width: 100%;
-      margin-top: 0;
-    }
-  }
-  @media screen and (min-width: 2024px) {
-    div {
-font-size: 40px;
-    }
-  }
+}
