@@ -90,7 +90,12 @@ body {
     margin-left: 23%;
     height: auto;
 }
+.img1 {
+  margin-top: 10px;
+  width: 60px;
+  vertical-align: middle;
 
+}
 .one img{
     width: 15%;
 }
