@@ -1,0 +1,16 @@
+
+.containerform{
+    margin-bottom: 100px;
+    width: 500px;
+    margin-left: 50px;
+
+
+
+}
+@media (max-width: 375px) {
+    .containerform{
+        margin-bottom: 5px;
+    
+    }
+  }
+  
