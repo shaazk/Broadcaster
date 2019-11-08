@@ -79,11 +79,7 @@ button a {
   float: left;
   width: 50%;
 }
-.btn::after {
-  content: "";
-  clear: both;
-  display: table;
-}
+
 @media screen and (max-width: 300px) {
   .cancelbtn,
   .submitbtn {
