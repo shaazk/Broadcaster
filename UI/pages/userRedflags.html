@@ -7,6 +7,8 @@
     <title>User account</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="Mutesi Sharon K" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <link rel="stylesheet" href="../styles/adminPanel.css" />
     <link rel="stylesheet" href="../styles/mainStyles.css" />
     <script src="../script/mainStyle.js" defer></script>
@@ -23,7 +25,9 @@
         </a>
         <div class="navbar-links">
             <ul>
-                <input type="text" placeholder="Search .." id="search">
+                <div> <input type="text" placeholder="Search .." id="search">
+                    <button type="submit" id="search-btn"><i class="fa fa-search"></i></button>
+                </div>
                 <li class="hide"><a href="userRedflags.html">My Redflags </a></li>
                 <li class="hide"><a id="line">|</a></li>
                 <li class="hide"><a href="userInterventions.html">My Interventions</a></li>
@@ -41,16 +45,16 @@
     <section class="container">
         <div class="one">
             <div class="side">
-                <h1>My Account</h1><br>
+                <h1>My Account</h1>
                 <a href="addRedflag.html" class="links">Add Redflags </a>
                 <hr>
                 <a href="addIntervention.html" class="links">Add Interventions </a>
                 <hr>
-                    <a href="userRedflags.html" class="links">My Redflags </a>
+                <a href="userRedflags.html" class="links">My Redflags </a>
                 <hr>
                 <a href="userInterventions.html" class="links">My Interventions</a>
 
-                <hr><br /><br />
+                <hr><br />
                 <p>Helpful links</p>
                 <div class="links1">
                     <a href="#">About us</a><br /><br />
@@ -60,7 +64,8 @@
                 </div>
             </div>
         </div>
-        <div class="two" style="overflow-x:auto;"><h1 style="font-size: 15px;">My Readflags</h1>
+        <div class="two" style="overflow-x:auto;">
+            <h1 style="font-size: 15px;">My Readflags</h1>
             <table id="users">
                 <tr>
                     <th>ID/Passport</th>
@@ -92,133 +97,133 @@
 
                 </tr>
                 <tr>
-                        <td>1997063534556</td>
-                        <td>25/06/2019</td>
-                        <td>corruption</td>
-                        <td>Redflag</td>
-                        <td>-77.0364,38.8951</td>
-                        <td>Pending</td>
-                        <td>ff.png</td>
-                        <td>ff.flv</td>
-                        <td>It was the 2nd of this...</td>
-                        <td> <input type="submit" value="Update"></td>
-                        <td><input type="submit" value="Delete"></td>
-    
-                    </tr>
-                    <tr>
-                            <td>1997063534556</td>
-                            <td>25/06/2019</td>
-                            <td>corruption</td>
-                            <td>Redflag</td>
-                            <td>-77.0364,38.8951</td>
-                            <td>Pending</td>
-                            <td>ff.png</td>
-                            <td>ff.flv</td>
-                            <td>It was the 2nd of this...</td>
-                            <td> <input type="submit" value="Update"></td>
-                            <td><input type="submit" value="Delete"></td>
-        
-                        </tr>
-                        <tr>
-                                <td>1997063534556</td>
-                                <td>25/06/2019</td>
-                                <td>corruption</td>
-                                <td>Redflag</td>
-                                <td>-77.0364,38.8951</td>
-                                <td>Pending</td>
-                                <td>ff.png</td>
-                                <td>ff.flv</td>
-                                <td>It was the 2nd of this...</td>
-                                <td> <input type="submit" value="Update"></td>
-                                <td><input type="submit" value="Delete"></td>
-            
-                            </tr>
-                            <tr>
-                                    <td>1997063534556</td>
-                                    <td>25/06/2019</td>
-                                    <td>corruption</td>
-                                    <td>Redflag</td>
-                                    <td>-77.0364,38.8951</td>
-                                    <td>Pending</td>
-                                    <td>ff.png</td>
-                                    <td>ff.flv</td>
-                                    <td>It was the 2nd of this...</td>
-                                    <td> <input type="submit" value="Update"></td>
-                                    <td><input type="submit" value="Delete"></td>
-                
-                                </tr>
-                                <tr>
-                                        <td>1997063534556</td>
-                                        <td>25/06/2019</td>
-                                        <td>corruption</td>
-                                        <td>Redflag</td>
-                                        <td>-77.0364,38.8951</td>
-                                        <td>Pending</td>
-                                        <td>ff.png</td>
-                                        <td>ff.flv</td>
-                                        <td>It was the 2nd of this...</td>
-                                        <td> <input type="submit" value="Update"></td>
-                                        <td><input type="submit" value="Delete"></td>
-                    
-                                    </tr>
-                                    <tr>
-                                            <td>1997063534556</td>
-                                            <td>25/06/2019</td>
-                                            <td>corruption</td>
-                                            <td>Redflag</td>
-                                            <td>-77.0364,38.8951</td>
-                                            <td>Pending</td>
-                                            <td>ff.png</td>
-                                            <td>ff.flv</td>
-                                            <td>It was the 2nd of this...</td>
-                                            <td> <input type="submit" value="Update"></td>
-                                            <td><input type="submit" value="Delete"></td>
-                        
-                                        </tr>
-                                        
-                        <tr>
-                                <td>1997063534556</td>
-                                <td>25/06/2019</td>
-                                <td>corruption</td>
-                                <td>Redflag</td>
-                                <td>-77.0364,38.8951</td>
-                                <td>Pending</td>
-                                <td>ff.png</td>
-                                <td>ff.flv</td>
-                                <td>It was the 2nd of this...</td>
-                                <td> <input type="submit" value="Update"></td>
-                                <td><input type="submit" value="Delete"></td>
-            
-                            </tr>
-                            <tr>
-                                    <td>1997063534556</td>
-                                    <td>25/06/2019</td>
-                                    <td>corruption</td>
-                                    <td>Redflag</td>
-                                    <td>-77.0364,38.8951</td>
-                                    <td>Pending</td>
-                                    <td>ff.png</td>
-                                    <td>ff.flv</td>
-                                    <td>It was the 2nd of this...</td>
-                                    <td> <input type="submit" value="Update"></td>
-                                    <td><input type="submit" value="Delete"></td>
-                
-                                </tr>
-                                <tr>
-                                        <td>1997063534556</td>
-                                        <td>25/06/2019</td>
-                                        <td>corruption</td>
-                                        <td>Redflag</td>
-                                        <td>-77.0364,38.8951</td>
-                                        <td>Pending</td>
-                                        <td>ff.png</td>
-                                        <td>ff.flv</td>
-                                        <td>It was the 2nd of this...</td>
-                                        <td> <input type="submit" value="Update"></td>
-                                        <td><input type="submit" value="Delete"></td>
-                    
-                                    </tr>
-                                                                        </table>
+                    <td>1997063534556</td>
+                    <td>25/06/2019</td>
+                    <td>corruption</td>
+                    <td>Redflag</td>
+                    <td>-77.0364,38.8951</td>
+                    <td>Pending</td>
+                    <td>ff.png</td>
+                    <td>ff.flv</td>
+                    <td>It was the 2nd of this...</td>
+                    <td> <input type="submit" value="Update"></td>
+                    <td><input type="submit" value="Delete"></td>
+
+                </tr>
+                <tr>
+                    <td>1997063534556</td>
+                    <td>25/06/2019</td>
+                    <td>corruption</td>
+                    <td>Redflag</td>
+                    <td>-77.0364,38.8951</td>
+                    <td>Pending</td>
+                    <td>ff.png</td>
+                    <td>ff.flv</td>
+                    <td>It was the 2nd of this...</td>
+                    <td> <input type="submit" value="Update"></td>
+                    <td><input type="submit" value="Delete"></td>
+
+                </tr>
+                <tr>
+                    <td>1997063534556</td>
+                    <td>25/06/2019</td>
+                    <td>corruption</td>
+                    <td>Redflag</td>
+                    <td>-77.0364,38.8951</td>
+                    <td>Pending</td>
+                    <td>ff.png</td>
+                    <td>ff.flv</td>
+                    <td>It was the 2nd of this...</td>
+                    <td> <input type="submit" value="Update"></td>
+                    <td><input type="submit" value="Delete"></td>
+
+                </tr>
+                <tr>
+                    <td>1997063534556</td>
+                    <td>25/06/2019</td>
+                    <td>corruption</td>
+                    <td>Redflag</td>
+                    <td>-77.0364,38.8951</td>
+                    <td>Pending</td>
+                    <td>ff.png</td>
+                    <td>ff.flv</td>
+                    <td>It was the 2nd of this...</td>
+                    <td> <input type="submit" value="Update"></td>
+                    <td><input type="submit" value="Delete"></td>
+
+                </tr>
+                <tr>
+                    <td>1997063534556</td>
+                    <td>25/06/2019</td>
+                    <td>corruption</td>
+                    <td>Redflag</td>
+                    <td>-77.0364,38.8951</td>
+                    <td>Pending</td>
+                    <td>ff.png</td>
+                    <td>ff.flv</td>
+                    <td>It was the 2nd of this...</td>
+                    <td> <input type="submit" value="Update"></td>
+                    <td><input type="submit" value="Delete"></td>
+
+                </tr>
+                <tr>
+                    <td>1997063534556</td>
+                    <td>25/06/2019</td>
+                    <td>corruption</td>
+                    <td>Redflag</td>
+                    <td>-77.0364,38.8951</td>
+                    <td>Pending</td>
+                    <td>ff.png</td>
+                    <td>ff.flv</td>
+                    <td>It was the 2nd of this...</td>
+                    <td> <input type="submit" value="Update"></td>
+                    <td><input type="submit" value="Delete"></td>
+
+                </tr>
+
+                <tr>
+                    <td>1997063534556</td>
+                    <td>25/06/2019</td>
+                    <td>corruption</td>
+                    <td>Redflag</td>
+                    <td>-77.0364,38.8951</td>
+                    <td>Pending</td>
+                    <td>ff.png</td>
+                    <td>ff.flv</td>
+                    <td>It was the 2nd of this...</td>
+                    <td> <input type="submit" value="Update"></td>
+                    <td><input type="submit" value="Delete"></td>
+
+                </tr>
+                <tr>
+                    <td>1997063534556</td>
+                    <td>25/06/2019</td>
+                    <td>corruption</td>
+                    <td>Redflag</td>
+                    <td>-77.0364,38.8951</td>
+                    <td>Pending</td>
+                    <td>ff.png</td>
+                    <td>ff.flv</td>
+                    <td>It was the 2nd of this...</td>
+                    <td> <input type="submit" value="Update"></td>
+                    <td><input type="submit" value="Delete"></td>
+
+                </tr>
+                <tr>
+                    <td>1997063534556</td>
+                    <td>25/06/2019</td>
+                    <td>corruption</td>
+                    <td>Redflag</td>
+                    <td>-77.0364,38.8951</td>
+                    <td>Pending</td>
+                    <td>ff.png</td>
+                    <td>ff.flv</td>
+                    <td>It was the 2nd of this...</td>
+                    <td> <input type="submit" value="Update"></td>
+                    <td><input type="submit" value="Delete"></td>
+
+                </tr>
+            </table>
 
     </section>
     <div class="footer">
