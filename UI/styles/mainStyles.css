@@ -51,7 +51,18 @@ body {
   color: black;
   padding: 1rem;
 }
+#search {
+  float: left;
+  padding: 2px;
+  border: none;
+  margin-top: 10px;
+  margin-right: 20px;
+  font-size: 14px;
+  width: 300px;
+  height: 30px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
 
+}
 .toggle-button {
   position: absolute;
   top: 0.75rem;
@@ -134,11 +145,16 @@ margin-left: 30px;
     #line {
       visibility: hidden;
     }
-  
+  .hide{
+    display: block;
+  }
     .toggle-button {
       display: flex;
     }
-  
+    #search {
+margin-left: 300px;
+margin-bottom: 50px; 
+ }
     .navbar-links {
       display: none;
       width: 100%;
