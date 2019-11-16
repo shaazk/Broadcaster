@@ -1,0 +1,35 @@
+{
+  "name": "broadcaster",
+  "version": "1.0.0",
+  "description": "Corruption is a huge bane to Africa’s development. African countries must develop novel and localized solutions that will curb this menace, hence the birth of Broadcaster. Broadcaster enables any/every citizen to bring any form of corruption to the notice of appropriate authorities and the general public. Users can also report on things that need government intervention",
+  "main": "./src/server.js",
+  "scripts": {
+    "start": "babel-node ./src/server.js",
+    "dev": "node_modules/.bin/nodemon ./src/server.js --exec babel-node --"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shaazk/Broadcaster.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shaazk/Broadcaster/issues"
+  },
+  "homepage": "https://github.com/shaazk/Broadcaster#readme",
+  "dependencies": {
+    "@babel/cli": "^7.7.0",
+    "@babel/core": "^7.7.2",
+    "@babel/node": "^7.7.0",
+    "@babel/preset-env": "^7.7.1",
+    "@hapi/joi": "^16.1.7",
+    "bcrypt": "^3.0.6",
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.4"
+  }
+}
