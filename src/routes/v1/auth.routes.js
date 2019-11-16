@@ -5,5 +5,7 @@ import { ifExist } from "../../middleware/auth.middleware";
 const router = express.Router();
 
 router.post("/auth/signup", ifExist, userController.signup);
+router.post("/auth/signin", userController.signin);
+
 
 export default router;
