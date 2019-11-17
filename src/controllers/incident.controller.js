@@ -94,6 +94,41 @@ export const incidentController = {
         message: "Unauthorised access",
       },
     });
+  },
+  updateLocation: (req, res) => {
+    if (req.user.role === "citizen") {
+      const index = incidents.findIndex((item) => item.incidentId.toString() === req.params.incidentId);
+      if (index > -1) {
+        if (incidents[index].status != "pending") {
+          return res.status(404).json({
+            status: 404,
+            data: {
+              message: "You are not allowed to update this incident",
+            },
+          });
+        }
+        
+        incidents[index].location = req.body.location;
+        return res.status(200).json({
+          status: 200,
+          data: {
+            message: "Updated red-flag record’s location",
+          },
+        });
+      }
+      return res.status(404).json({
+        status: 404,
+        data: {
+          message: "Incident not found",
+        },
+      });
+    }
+    return res.status(401).json({
+      status: 401,
+      data: {
+        message: "Unauthorised access",
+      },
+    });
   }
 };
 
