@@ -1,6 +1,5 @@
-/* eslint-disable consistent-return */
 /* eslint-disable import/prefer-default-export */
-/* eslint-disable linebreak-style */
+/* eslint-disable consistent-return */
 import { users } from '../db/data';
 
 export const ifExist = (req, res, next) => {

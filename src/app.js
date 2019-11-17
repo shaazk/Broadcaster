@@ -1,4 +1,3 @@
-/* eslint-disable spaced-comment */
 import express from 'express';
 import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
@@ -14,10 +13,10 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-//accept static files like images
+// accept static files like images
 // app.use(express.static(`${__dirname}/`))
 
-//router middleware
+// router middleware
 app.use('/api/v1', router, incidentRouter);
 
 export default app;

@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 class User {
   constructor(userId, fullname, email, password, PhoneNumber, username, role = 'citizen') {
     this.userId = userId;

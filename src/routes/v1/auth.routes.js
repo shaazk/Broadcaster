@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 import express from 'express';
 import userController from '../../controllers/auth.controller';
 import { ifExist } from '../../middleware/auth.middleware';
