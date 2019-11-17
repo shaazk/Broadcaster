@@ -1,4 +1,3 @@
-/* eslint-disable no-shadow */
 import jwt from 'jsonwebtoken';
 import { users } from '../db/data';
 

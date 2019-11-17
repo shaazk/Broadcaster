@@ -1,12 +1,10 @@
-/* eslint-disable eqeqeq */
-/* eslint-disable max-len */
 /* eslint-disable import/prefer-default-export */
+/* eslint-disable max-len */
+/* eslint-disable eqeqeq */
 /* eslint-disable comma-dangle */
-/* eslint-disable linebreak-style */
 import Joi from '@hapi/joi';
 import { incidents } from '../db/data';
 import { Incident } from '../model/incident.model';
-// Validation
 
 const schema = {
   createIncident: Joi.object({
