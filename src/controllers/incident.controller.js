@@ -136,6 +136,20 @@ export const incidentController = {
       status: 200,
       data: redflags,
     });
+  },
+  getSpecificRedflag: (req, res) => {
+    const redflag = incidents.find((item) => item.incidentId.toString() === req.params.incidentId);
+    if (!redflag || redflag.type !== "redflag") {
+      return res.status(404).send({
+        success: false,
+        message: "The red-flag does not exist, check your ID",
+      });
+    }
+    return res.status(200).send({
+      success: true,
+      details: redflag
+    });
   }
+
 };
 
