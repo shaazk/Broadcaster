@@ -14,7 +14,7 @@ const schema = {
       .min(3)
       .required(),
     type: Joi.string()
-      .min(8)
+      .min(7)
       .required(),
     location: Joi.string()
       .min(3)
@@ -128,6 +128,13 @@ export const incidentController = {
       data: {
         message: "Unauthorised access",
       },
+    });
+  },
+  getAllRedflags: (req, res) => {
+    const redflags = incidents.filter((user) => user.type === "redflag");
+    return res.status(200).send({
+      status: 200,
+      data: redflags,
     });
   }
 };
