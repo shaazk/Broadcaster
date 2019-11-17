@@ -149,6 +149,28 @@ export const incidentController = {
       success: true,
       details: redflag
     });
+  },
+  deleteRedflag: (req, res) => {
+    const deleteRedFlag = incidents.findIndex((item) => item.incidentId.toString() === req.params.incidentId);
+    if (deleteRedFlag > -1) {
+      if (incidents[deleteRedFlag].status != "pending") {
+        return res.status(404).json({
+          status: 404,
+          data: {
+            message: "You are not allowed to update this incident",
+          },
+        });
+      }
+
+      incidents.splice(deleteRedFlag, 1);
+      return res.status(200).send({
+        status: 200,
+        data: {
+          message: "Red-flag successfully deleted",
+        },
+      });
+    }
+    return 0;
   }
 
 };

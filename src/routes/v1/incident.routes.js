@@ -9,5 +9,7 @@ router.patch("/red-flags/:incidentId/comment",verifyToken, incidentController.up
 router.patch("/red-flags/:incidentId/location",verifyToken, incidentController.updateLocation );
 router.get("/red-flags",verifyToken, incidentController.getAllRedflags );
 router.get("/red-flags/:incidentId",verifyToken, incidentController.getSpecificRedflag );
+router.delete("/red-flags/:incidentId",verifyToken, incidentController.deleteRedflag );
+
 
 export default router;
