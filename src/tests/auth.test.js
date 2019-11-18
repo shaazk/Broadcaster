@@ -16,7 +16,7 @@ describe('auth:', () => {
   };
 
   it('should create new user.', (done) => {
-    chai.request(app).post('/api/v1/auth/signup').send(data).end((_err, res) => {
+    chai.request(app).post('/api/v1/auth/signup').send(data).end((err, res) => {
       chai.expect(res.status).to.eq(201);
       done();
     });

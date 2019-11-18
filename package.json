@@ -7,7 +7,7 @@
     "start": "node ./src/build/server.js",
     "build": "babel src --out-dir src/build",
     "dev": "node_modules/.bin/nodemon ./src/server.js --exec babel-node --",
-    "test": "nyc --reporter=text --reporter=html mocha ./src/tests/**/*.js --require @babel/polyfill --require @babel/register",
+    "test": "nyc --reporter=text --reporter=html mocha ./src/tests/**/*.js --require @babel/polyfill --require @babel/register --timeout 10000 --exit",
     "coveralls": "nyc report --reporter=text-lcov | coveralls",
     "showCoverage": "start coverage/lcov-reporter/index.html"
   },
