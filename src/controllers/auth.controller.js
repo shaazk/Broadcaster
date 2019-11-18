@@ -39,17 +39,18 @@ const schema = {
 
 const userController = {
   signup: async (req, res) => {
+    let salt;
+    let password;
+
     try {
       await schema.signup.validateAsync(req.body);
+      salt = await bcrypt.genSalt(10);
+      password = await bcrypt.hash(req.body.password, salt);
     } catch (error) {
       return res
         .status(400)
         .send({ status: 400, message: error.details[0].message });
     }
-
-    const salt = await bcrypt.genSalt(10);
-    const password = await bcrypt.hash(req.body.password, salt);
-    console.log(password);
 
     const user = new User(
       req.body.userId,
