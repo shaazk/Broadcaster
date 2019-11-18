@@ -11,6 +11,7 @@ before_script:
 - npm install
 scripts:
   - npm run test
+  - npm run build
 after_success: npm run coveralls
 
 deploy:

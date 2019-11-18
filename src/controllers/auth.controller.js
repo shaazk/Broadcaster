@@ -49,6 +49,7 @@ const userController = {
 
     const salt = await bcrypt.genSalt(10);
     const password = await bcrypt.hash(req.body.password, salt);
+    console.log(password);
 
     const user = new User(
       req.body.userId,

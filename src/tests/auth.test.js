@@ -29,7 +29,7 @@ describe('auth:', () => {
       email: 'sharonuashy@gmail.com',
       password: 'jhjjhgjhg',
       PhoneNumber: '5657657',
-      username: 'tesi',
+      username: '',
     };
     chai.request(app).post('/api/v1/auth/signup').send(userData).end((err, res) => {
       chai.expect(res.status).to.eq(409);
