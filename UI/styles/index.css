@@ -65,6 +65,10 @@ img {
   clear: both;
   display: table;
 }
+
+.contain a:active {
+  color: black;
+}
 @media screen and (max-width: 800px) {
   .img img {
     height: 200px;

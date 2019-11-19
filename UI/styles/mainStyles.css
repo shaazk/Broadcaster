@@ -102,7 +102,7 @@ body {
 }
 .one {
   width: 20%;
-  height: 450px;
+  height: 550px;
   float: left;
   margin-top: 30px;
   position: fixed;
@@ -145,68 +145,74 @@ body {
   display: none;
 }
 
-@media screen and (max-width: 800px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  #line {
-    visibility: hidden;
-  }
-  .hide {
-    display: block;
-  }
-  .toggle-button {
-    display: flex;
-  }
-  #search {
-    margin-left: 300px;
-    margin-bottom: 50px;
-  }
-  .navbar-links {
-    display: none;
-    width: 100%;
-  }
-  .one {
-    display: none;
-  }
-  .two {
-    margin-left: 0;
-  }
-  .navbar-links ul {
-    width: 100%;
-    flex-direction: column;
-  }
 
-  .navbar-links ul li {
-    text-align: center;
-  }
-
-  .navbar-links ul li a {
-    padding: 0.5rem 1rem;
-  }
-
-  .navbar-links.active {
-    display: flex;
-  }
-  .footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: white;
-    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.25);
-    position: sticky;
-    height: 40px;
-    bottom: 0;
-  }
-  .footer a {
-    text-decoration: none;
-    color: black;
-    font-size: 10px;
-    padding: 0 20px;
-  }
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 800px) { 
+   .navbar {
+  flex-direction: column;
+  align-items: flex-start;
 }
-/* 
-  @media screen and (min-width: 1024px) {
-    .navbar {
-  } */
+#line {
+  visibility: hidden;
+}
+.hide {
+  display: block;
+}
+.toggle-button {
+  display: flex;
+}
+#search {
+  margin-left: 100px;
+  margin-bottom: 50px;
+  flex-direction: column;
+
+}
+.navbar-links {
+  display: none;
+  width: 100%;
+}
+.one {
+  display: none;
+}
+.two {
+  margin-left: 0;
+}
+.navbar-links ul {
+  width: 100%;
+  flex-direction: column;
+}
+
+.navbar-links ul li {
+  text-align: center;
+}
+
+.navbar-links ul li a {
+  padding: 0.5rem 1rem;
+}
+
+.navbar-links.active {
+  display: flex;
+}
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.25);
+  position: sticky;
+  height: 40px;
+  bottom: 0;
+}
+.footer a {
+  text-decoration: none;
+  color: black;
+  font-size: 10px;
+  padding: 0 20px;
+}
+}
+@media only screen and (min-width: 1200px) {
+ body{
+   font-size: 18px;
+ }
+}
+
