@@ -28,13 +28,13 @@
                 <div> <input type="text" placeholder="Search .." id="search">
                     <button type="submit" id="search-btn"><i class="fa fa-search"></i></button>
                 </div>
-                <li class="hide"><a href="userRedflags.html">My Redflags </a></li>
+                <li class="hide"><a href="loggedUser_addRedflag.html" class="links">Add Redflags </a></li>
                 <li class="hide"><a id="line">|</a></li>
-                <li class="hide"><a href="userInterventions.html">My Interventions</a></li>
+                <li class="hide"><a href="addIntervention.html" class="links">Add Interventions </a></li>
                 <li class="hide"><a id="line">|</a></li>
-                <li class="hide"><a href="addRedflag.html">Add Redflags </a></li>
+                <li class="hide"><a href="userRedflags.html" class="links">My Redflags </a></li>
                 <li class="hide"><a id="line">|</a></li>
-                <li class="hide"><a href="addIntervention.html">Add Interventions </a></li>
+                <li class="hide"><a href="userInterventions.html" class="links">My Interventions</a></li>
                 <li><a id="line">|</a></li>
                 <li><a href="signin.html">Signout</a></li>
             </ul>
@@ -46,7 +46,7 @@
         <div class="one">
             <div class="side">
                 <h1>My Account</h1>
-                <a href="addRedflag.html" class="links">Add Redflags </a>
+                <a href="loggedUser_addRedflag.html" class="links">Add Redflags </a>
                 <hr>
                 <a href="addIntervention.html" class="links">Add Interventions </a>
                 <hr>
@@ -66,7 +66,7 @@
         </div>
         <div class="two" style="overflow-x:auto;">
             <table id="users">
-                <tr>
+                <tr data-href="clainReport.html">
                     <th>ID/Passport</th>
                     <th>Created on</th>
                     <th>Title</th>
@@ -93,7 +93,7 @@
                     <td>It was the 2nd of this...</td>
                     <td> <input type="submit" value="Update"></td>
                     <td><input type="submit" value="Delete"></td>
-
+                
                 </tr>
                 <tr>
                     <td>1997063534556</td>

@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>User account</title>
+    <title>Admin panel</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="Mutesi Sharon K" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -28,14 +28,15 @@
                 <div> <input type="text" placeholder="Search .." id="search">
                     <button type="submit" id="search-btn"><i class="fa fa-search"></i></button>
                 </div>
-                <li class="hide"><a href="loggedUser_addRedflag.html" class="links">Add Redflags </a></li>
+                <li class="hide"><a href="redflags_admin.html" class="links">Redflags </a></li>
                 <li class="hide"><a id="line">|</a></li>
-                <li class="hide"><a href="#" class="links">Under investigation </a></li>
+                <li class="hide"><a href="redflags_admin.html" class="links">Interventions</a></li>
                 <li class="hide"><a id="line">|</a></li>
-                <li class="hide"><a href="resolvedIncidents.html" class="links">Resolved Redflags </a></li>
+                <li class="hide"><a href="resolvedIncidents.html" class="links">Resolved</a></li>
                 <li class="hide"><a id="line">|</a></li>
-                <li class="hide"><a href="userInterventions.html" class="links">Interventions</a></li>
+                <li class="hide"><a href="adminUnderInvestion.html" class="links">Investigating</a></li>
                 <li><a id="line">|</a></li>
+                <li class="hide"><a href="#" class="links">Rejected</a></li>
                 <li><a href="signin.html">Signout</a></li>
             </ul>
         </div>
@@ -45,15 +46,16 @@
     <section class="container">
         <div class="one">
             <div class="side">
-                <h1>My Account</h1>
-                <a href="loggedUser_addRedflag.html" class="links">Add Redflags </a>
+               <a href="adminPanel.html" style="color: black; text-decoration: none;"><h1>Admin</h1></a> 
+               <a href="redflags_admin.html" class="links">Redflags </a>
                 <hr>
-                <a href="#" class="links">Under investigation </a>
+                <a href="redflags_admin.html" class="links">Interventions</a>
                 <hr>
-                <a href="#" class="links">Resolved Redflags </a>
+                <a href="resolvedIncidents.html" class="links">Resolved</a>
                 <hr>
-                <a href="userInterventions.html" class="links">Interventions</a>
-
+                <a href="adminUnderInvestion.html" class="links">Investigating</a>
+                <hr>
+                <a href="#" class="links">Rejected</a>
                 <hr><br />
                 <p>Helpful links</p>
                 <div class="links1">
@@ -65,11 +67,13 @@
             </div>
         </div>
         <div class="two" style="overflow-x:auto;">
-            <h1 style="font-size: 15px;">My Readflags</h1>
+            <h1 style="font-size: 15px;">Readflags</h1>
+
             <table id="users">
                 <tr>
                     <th>ID/Passport</th>
                     <th>Created on</th>
+                    <th>Created by</th>
                     <th>Title</th>
                     <th>Type</th>
                     <th>Location</th>
@@ -85,6 +89,7 @@
                 <tr>
                     <td>1997063534556</td>
                     <td>25/06/2019</td>
+                    <td>Mutesi Sharon Kiiza</td>
                     <td>corruption</td>
                     <td>Redflag</td>
                     <td>-77.0364,38.8951</td>
@@ -92,135 +97,98 @@
                     <td>ff.png</td>
                     <td>ff.flv</td>
                     <td>It was the 2nd of this...</td>
-                    <td> <input type="submit" value="Update"></td>
-                    <td><input type="submit" value="Delete"></td>
+                    <td> <input type="submit" value="Reject"></td>
+                    <td><input type="submit" value="Investigate"></td>
 
                 </tr>
                 <tr>
                     <td>1997063534556</td>
                     <td>25/06/2019</td>
-                    <td>corruption</td>
+                    <td>Mutesi Sharon Kiiza</td>
+                    <td>Bribery</td>
                     <td>Redflag</td>
                     <td>-77.0364,38.8951</td>
                     <td>Pending</td>
                     <td>ff.png</td>
                     <td>ff.flv</td>
                     <td>It was the 2nd of this...</td>
-                    <td> <input type="submit" value="Update"></td>
-                    <td><input type="submit" value="Delete"></td>
+                    <td> <input type="submit" value="Reject"></td>
+                    <td><input type="submit" value="Investigate"></td>
 
                 </tr>
                 <tr>
                     <td>1997063534556</td>
                     <td>25/06/2019</td>
+                    <td>Mutesi Sharon Kiiza</td>
                     <td>corruption</td>
-                    <td>Redflag</td>
+                    <td>Intervention</td>
                     <td>-77.0364,38.8951</td>
                     <td>Pending</td>
                     <td>ff.png</td>
                     <td>ff.flv</td>
                     <td>It was the 2nd of this...</td>
-                    <td> <input type="submit" value="Update"></td>
-                    <td><input type="submit" value="Delete"></td>
+                    <td> <input type="submit" value="Reject"></td>
+                    <td><input type="submit" value="Investigate"></td>
 
                 </tr>
                 <tr>
                     <td>1997063534556</td>
                     <td>25/06/2019</td>
-                    <td>corruption</td>
+                    <td>Mutesi Sharon Kiiza</td>
+                    <td>Bribery</td>
                     <td>Redflag</td>
                     <td>-77.0364,38.8951</td>
                     <td>Pending</td>
                     <td>ff.png</td>
                     <td>ff.flv</td>
                     <td>It was the 2nd of this...</td>
-                    <td> <input type="submit" value="Update"></td>
-                    <td><input type="submit" value="Delete"></td>
+                    <td> <input type="submit" value="Reject"></td>
+                    <td><input type="submit" value="Investigate"></td>
 
                 </tr>
                 <tr>
                     <td>1997063534556</td>
                     <td>25/06/2019</td>
-                    <td>corruption</td>
+                    <td>Mutesi Sharon Kiiza</td>
+                    <td>Bribery</td>
                     <td>Redflag</td>
                     <td>-77.0364,38.8951</td>
                     <td>Pending</td>
                     <td>ff.png</td>
                     <td>ff.flv</td>
                     <td>It was the 2nd of this...</td>
-                    <td> <input type="submit" value="Update"></td>
-                    <td><input type="submit" value="Delete"></td>
+                    <td> <input type="submit" value="Reject"></td>
+                    <td><input type="submit" value="Investigate"></td>
 
                 </tr>
                 <tr>
                     <td>1997063534556</td>
                     <td>25/06/2019</td>
-                    <td>corruption</td>
-                    <td>Redflag</td>
+                    <td>Mutesi Sharon Kiiza</td>
+                    <td>Bribery</td>
+                    <td>Intervention</td>
                     <td>-77.0364,38.8951</td>
                     <td>Pending</td>
                     <td>ff.png</td>
                     <td>ff.flv</td>
                     <td>It was the 2nd of this...</td>
-                    <td> <input type="submit" value="Update"></td>
-                    <td><input type="submit" value="Delete"></td>
+                    <td> <input type="submit" value="Reject"></td>
+                    <td><input type="submit" value="Investigate"></td>
 
                 </tr>
                 <tr>
                     <td>1997063534556</td>
                     <td>25/06/2019</td>
-                    <td>corruption</td>
+                    <td>Mutesi Sharon Kiiza</td>
+                    <td>Bribery</td>
                     <td>Redflag</td>
                     <td>-77.0364,38.8951</td>
                     <td>Pending</td>
                     <td>ff.png</td>
                     <td>ff.flv</td>
                     <td>It was the 2nd of this...</td>
-                    <td> <input type="submit" value="Update"></td>
-                    <td><input type="submit" value="Delete"></td>
-
-                </tr>
-
-                <tr>
-                    <td>1997063534556</td>
-                    <td>25/06/2019</td>
-                    <td>corruption</td>
-                    <td>Redflag</td>
-                    <td>-77.0364,38.8951</td>
-                    <td>Pending</td>
-                    <td>ff.png</td>
-                    <td>ff.flv</td>
-                    <td>It was the 2nd of this...</td>
-                    <td> <input type="submit" value="Update"></td>
-                    <td><input type="submit" value="Delete"></td>
-
-                </tr>
-                <tr>
-                    <td>1997063534556</td>
-                    <td>25/06/2019</td>
-                    <td>corruption</td>
-                    <td>Redflag</td>
-                    <td>-77.0364,38.8951</td>
-                    <td>Pending</td>
-                    <td>ff.png</td>
-                    <td>ff.flv</td>
-                    <td>It was the 2nd of this...</td>
-                    <td> <input type="submit" value="Update"></td>
-                    <td><input type="submit" value="Delete"></td>
-
-                </tr>
-                <tr>
-                    <td>1997063534556</td>
-                    <td>25/06/2019</td>
-                    <td>corruption</td>
-                    <td>Redflag</td>
-                    <td>-77.0364,38.8951</td>
-                    <td>Pending</td>
-                    <td>ff.png</td>
-                    <td>ff.flv</td>
-                    <td>It was the 2nd of this...</td>
-                    <td> <input type="submit" value="Update"></td>
-                    <td><input type="submit" value="Delete"></td>
+                    <td> <input type="submit" value="Reject"></td>
+                    <td><input type="submit" value="Investigate"></td>
 
                 </tr>
             </table>

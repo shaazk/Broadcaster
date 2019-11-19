@@ -8,7 +8,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="Mutesi Sharon K" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
     <link rel="stylesheet" href="../styles/adminPanel.css" />
     <link rel="stylesheet" href="../styles/mainStyles.css" />
     <script src="../script/mainStyle.js" defer></script>
@@ -28,14 +27,15 @@
                 <div> <input type="text" placeholder="Search .." id="search">
                     <button type="submit" id="search-btn"><i class="fa fa-search"></i></button>
                 </div>
-                <li class="hide"><a href="redflags.html">Redflags </a></li>
+                <li class="hide"><a href="redflags_admin.html" class="links">Redflags </a></li>
                 <li class="hide"><a id="line">|</a></li>
-                <li class="hide"><a href="interventions.html">Interventions</a></li>
+                <li class="hide"><a href="redflags_admin.html" class="links">Interventions</a></li>
                 <li class="hide"><a id="line">|</a></li>
-                <li class="hide"><a href="rejected.html">Rejected </a></li>
+                <li class="hide"><a href="resolvedIncidents.html" class="links">Resolved</a></li>
                 <li class="hide"><a id="line">|</a></li>
-                <li class="hide"><a href="UnderInvestigaton.html">Investigating </a></li>
+                <li class="hide"><a href="adminUnderInvestion.html" class="links">Investigating</a></li>
                 <li><a id="line">|</a></li>
+                <li class="hide"><a href="#" class="links">Rejected</a></li>
                 <li><a href="signin.html">Signout</a></li>
             </ul>
         </div>
@@ -45,15 +45,16 @@
     <section class="container">
         <div class="one">
             <div class="side">
-                <h1>Admin</h1>
-                <a href="../pages/redflags.html" class="links">Redflags</a>
+               <a href="adminPanel.html" style="color: black; text-decoration: none;"><h1>Admin</h1></a> 
+               <a href="redflags_admin.html" class="links">Redflags </a>
                 <hr>
-                <a href="../pages/interventions.html" class="links">Intervations</a>
+                <a href="redflags_admin.html" class="links">Interventions</a>
                 <hr>
-                <a href="../pages/rejected.html" class="links">Rejected</a>
+                <a href="resolvedIncidents.html" class="links">Resolved</a>
                 <hr>
-                <a href="../pages/UnderInvestigaton.html" class="links">Investigating</a>
-
+                <a href="adminUnderInvestion.html" class="links">Investigating</a>
+                <hr>
+                <a href="#" class="links">Rejected</a>
                 <hr><br />
                 <p>Helpful links</p>
                 <div class="links1">
