@@ -7,7 +7,7 @@ export const users = [
     1234567890123459,
     'Mutesi Sharon K',
     'sharonuase@gmail.com',
-    '0787354568',
+    '$2b$10$VwsjGOc.e9fzfMdHrm5PTOsFs3dtJ8bxe9bT.PJBWNTdfllyGmM2S',
     'tesi',
     'admin',
   ),
