@@ -38,12 +38,15 @@ User page
 | ----------- | -------------------- | ------------------- |
 |api/v1/auth/signup | POST | Create user account |
 |api/v1/auth/signin |POST  | Login a user |
-|api/v1/red-flags|POST| Create a redflag/ intervention|
-|api/v1/red-flags/<:red-glag-id>/comment|PATCH|Update a specific redflag comment|
-|api/v1/red-flags/<:red-glag-id>/location|PATCH|Update a specific redflag location|
-|api/v1/red-flags|GET|Get all Redflag|
-|/api/v1/red-flags/<:red-flag-id>|GET|View a specific Redflag|
-|/api/v1/red-flags/<:red-flag-id>|DELETE|Delete a Redflag|
+|api/v1/incident|POST| Create an incident(redflag/ intervention)|
+|api/v1/incident/<:incident-id>/comment|PATCH|Update an incident comment(red-flag/intervention)|
+|api/v1/incident/<:incident-id>/location|PATCH|Update a specific incident location(red-flag/intervention)|
+|/api/v1/incident/<:incident-id>|DELETE|Delete an incident(red-flag/intervention)|
+|api/v1/red-flags|GET|Get all Redflags|
+|/api/v1/red-flags/<:incident-id>|GET|View a specific Redflag|
+|api/v1/interventions|GET|Get all interventions|
+|/api/v1/interventions/<:incident-id>|GET|View a specific intervention|
+
 
 
 ### Backend Tools used
@@ -87,6 +90,9 @@ Now, to run your app locally and access resources, we will have to use the  endp
 ### Test App
 The app is designed with Test Driven Development(TDD). To see how it works, run the command below in your terminal.
 >npm test
+
+### API Documentation
+- visit Swagger API [here](https://way-farer-challenge.herokuapp.com/docs/)
 
 ### Feedback
 - Any found issue, raise it on [github](https://github.com/shaazk/Broadcaster/issues)
