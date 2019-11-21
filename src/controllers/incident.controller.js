@@ -64,7 +64,8 @@ export const incidentController = {
   },
   updateComment: (req, res) => {
     if (req.user.role === 'citizen') {
-      const index = incidents.findIndex((item) => item.incidentId.toString() === req.params.incidentId);
+      const index = incidents.findIndex((item) => 
+        item.incidentId.toString() === req.params.incidentId);
       if (index > -1) {
         if (incidents[index].status != 'pending') {
           return res.status(404).json({
@@ -132,27 +133,7 @@ export const incidentController = {
       },
     });
   },
-  getAllRedflags: (req, res) => {
-    const redflags = incidents.filter((user) => user.type === 'redflag');
-    return res.status(200).send({
-      status: 200,
-      data: redflags,
-    });
-  },
-  getSpecificRedflag: (req, res) => {
-    const redflag = incidents.find((item) => item.incidentId.toString() === req.params.incidentId);
-    if (!redflag || redflag.type !== 'redflag') {
-      return res.status(404).send({
-        success: false,
-        message: 'The red-flag does not exist, check your ID',
-      });
-    }
-    return res.status(200).send({
-      success: true,
-      details: redflag,
-    });
-  },
-  deleteRedflag: (req, res) => {
+  deleteIncident: (req, res) => {
     const deleteRedFlag = incidents.findIndex((item) => item.incidentId.toString() === req.params.incidentId);
     if (deleteRedFlag > -1) {
       if (incidents[deleteRedFlag].status != 'pending') {

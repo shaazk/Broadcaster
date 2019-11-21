@@ -1,15 +1,23 @@
 import express from 'express';
 import { incidentController } from '../../controllers/incident.controller';
+import { redflagController } from '../../controllers/redflag.controller';
+import { interventionController } from '../../controllers/intervention.controller';
 import verifyToken from '../../middleware/token.middleware';
 
 const router = express.Router();
+// full incident
+router.post('/incident', verifyToken, incidentController.createIncident);
+router.patch('/incident/:incidentId/comment', verifyToken, incidentController.updateComment);
+router.patch('/incident/:incidentId/location', verifyToken, incidentController.updateLocation);
+router.delete('/incident/:incidentId', verifyToken, incidentController.deleteIncident);
 
-router.post('/red-flags', verifyToken, incidentController.createIncident);
-router.patch('/red-flags/:incidentId/comment', verifyToken, incidentController.updateComment);
-router.patch('/red-flags/:incidentId/location', verifyToken, incidentController.updateLocation);
-router.get('/red-flags', verifyToken, incidentController.getAllRedflags);
-router.get('/red-flags/:incidentId', verifyToken, incidentController.getSpecificRedflag);
-router.delete('/red-flags/:incidentId', verifyToken, incidentController.deleteRedflag);
 
+// red-flags
+router.get('/red-flags', verifyToken, redflagController.getAllRedflags);
+router.get('/red-flags/:incidentId', verifyToken, redflagController.getSpecificRedflag);
+
+// interventions
+router.get('/interventions', verifyToken, interventionController.getAllInterventions);
+router.get('/interventions/:incidentId', verifyToken, interventionController.getSpecificIntervention);
 
 export default router;
