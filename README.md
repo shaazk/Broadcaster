@@ -92,7 +92,7 @@ The app is designed with Test Driven Development(TDD). To see how it works, run 
 >npm test
 
 ### API Documentation
-- visit Swagger API [here](https://way-farer-challenge.herokuapp.com/docs/)
+- visit postman API [here](https://documenter.getpostman.com/view/8526171/SW7aYnoD)
 
 ### Feedback
 - Any found issue, raise it on [github](https://github.com/shaazk/Broadcaster/issues)
