@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/shaazk/Broadcaster.svg?branch=develop)](https://travis-ci.org/shaazk/Broadcaster)
+[![Build Status](https://travis-ci.org/shaazk/Broadcaster.svg?branch=develop)](https://travis-ci.org/shaazk/Broadcaster) [![Maintainability](https://api.codeclimate.com/v1/badges/31f7a555c0c36d16a57e/maintainability)](https://codeclimate.com/github/shaazk/Broadcaster/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/31f7a555c0c36d16a57e/test_coverage)](https://codeclimate.com/github/shaazk/Broadcaster/test_coverage)
 
 
 # Broadcaster
@@ -19,6 +19,11 @@ Sign up page
 Sign in page
 >[https://shaazk.github.io/Broadcaster/UI/pages/signin.html](https://shaazk.github.io/Broadcaster/UI/pages/signin.html)
 
+Add red-flag page
+>[https://shaazk.github.io/Broadcaster/UI/pages/addRedflag.html](https://shaazk.github.io/Broadcaster/UI/pages/addRedflag.html)
+
+Add intervention page
+>[https://shaazk.github.io/Broadcaster/UI/pages/addIntervention.html](https://shaazk.github.io/Broadcaster/UI/pages/addIntervention.html)
 
 Admin page
 >[https://shaazk.github.io/Broadcaster/UI/pages/adminPanel.html](https://shaazk.github.io/Broadcaster/UI/pages/adminPanel.html)
