@@ -1,14 +1,11 @@
-language: node_js
 sudo: false
+language: node_js
 node_js:
   - "stable"
-cache:
-  directories:
-    - node_modules
-notifications:
-  email: false
-before_script:
-- npm install
-scripts:
-  - npm run test
-after_success: npm run coveralls
+install:
+  - npm i
+script: 
+  - npm run migrate
+  - nom run test
+after_success:
+  - npm run coverage  
