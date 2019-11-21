@@ -6,6 +6,6 @@ install:
   - npm i
 script: 
   - npm run migrate
-  - nom run test
+  - npm run test
 after_success:
   - npm run coverage  
