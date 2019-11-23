@@ -13,7 +13,6 @@ const verifyToken = (req, res, next) => {
 
   try {
     const verified = jwt.verify(token, process.env.KEY);
-    console.log('===============>', process.env.KEY);
     const user = users.find((user) => user.email === verified.email);
     if (!user) {
       return res.status(401).send({
