@@ -64,8 +64,7 @@ export const incidentController = {
   },
   updateComment: (req, res) => {
     if (req.user.role === 'citizen') {
-      const index = incidents.findIndex((item) => 
-        item.incidentId.toString() === req.params.incidentId);
+      const index = incidents.findIndex((item) => item.incidentId.toString() === req.params.incidentId);
       if (index > -1) {
         if (incidents[index].status != 'pending') {
           return res.status(404).json({
