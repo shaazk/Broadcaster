@@ -6,8 +6,8 @@ export const users = [
   new User(
     1234567890123459,
     'Mutesi Sharon K',
-    'sharonuase@gmail.com',
-    '$2b$10$VwsjGOc.e9fzfMdHrm5PTOsFs3dtJ8bxe9bT.PJBWNTdfllyGmM2S',
+    'admin@gmail.com',
+    '$2b$10$s4RN8ri.6or1GwLHRVRpW.r6YMfD2tkTK0NV.SV01KuwKQQ71YcZG',
     'tesi',
     'admin',
   ),
@@ -21,7 +21,6 @@ export const incidents = [
     'Corruption',
     'Redflag',
     'kicukiro',
-    'pending',
     'w.png',
     'w.mp4',
     ' Veda is very corrupt',

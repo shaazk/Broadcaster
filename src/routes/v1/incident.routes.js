@@ -11,7 +11,6 @@ router.patch('/incident/:incidentId/comment', verifyToken, incidentController.up
 router.patch('/incident/:incidentId/location', verifyToken, incidentController.updateLocation);
 router.delete('/incident/:incidentId', verifyToken, incidentController.deleteIncident);
 
-
 // red-flags
 router.get('/red-flags', verifyToken, redflagController.getAllRedflags);
 router.get('/red-flags/:incidentId', verifyToken, redflagController.getSpecificRedflag);
