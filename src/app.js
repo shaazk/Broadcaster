@@ -13,9 +13,6 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-// accept static files like images
-// app.use(express.static(`${__dirname}/`))
-
 // router middleware
 app.use('/api/v1', router, incidentRouter);
 
