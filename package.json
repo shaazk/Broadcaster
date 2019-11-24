@@ -4,7 +4,7 @@
   "description": "Corruption is a huge bane to Africa’s development. African countries must develop novel and localized solutions that will curb this menace, hence the birth of Broadcaster. Broadcaster enables any/every citizen to bring any form of corruption to the notice of appropriate authorities and the general public. Users can also report on things that need government intervention",
   "main": "./src/server.js",
   "scripts": {
-    "start": "node ./src/build/server.js",
+    "start": "babel-node ./src/server.js",
     "build": "babel src --out-dir src/build",
     "dev": "node_modules/.bin/nodemon ./src/server.js --exec babel-node --",
     "test": "nyc --reporter=text --reporter=html mocha ./src/tests/**/*.js --require @babel/polyfill --require @babel/register --exit",
