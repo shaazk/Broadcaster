@@ -20,7 +20,6 @@ describe('auth:', () => {
     title: 'corruption',
     type: 'redflag',
     location: 'kicukiro',
-    status: 'pending',
     images: ['w.png'],
     videos: ['w.mp4'],
     comment: 'ghfygfygytjygytfyfytftrf',

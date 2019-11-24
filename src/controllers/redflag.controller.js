@@ -3,24 +3,22 @@
 /* eslint-disable eqeqeq */
 /* eslint-disable comma-dangle */
 import { incidents } from '../db/data';
+import returnMessage from '../helpers/response.helper';
 
 export const redflagController = {
   getAllRedflags: (req, res) => {
-    const redflags = incidents.filter((user) => user.type === 'redflag');
-    return res.status(200).send({
-      status: 200,
-      data: redflags,
-    });
+    const redflags = incidents.filter((redflag) => redflag.type === 'redflag' && redflag.createdBy === req.user.userId);
+    return returnMessage(res, 200, { redflags, });
   },
   getSpecificRedflag: (req, res) => {
     const redflag = incidents.find((item) => item.incidentId.toString() === req.params.incidentId);
     if (!redflag || redflag.type !== 'redflag') {
-      return res.status(404).send({
+      return returnMessage(res, 404, {
         success: false,
         message: 'The red-flag does not exist, check your ID',
       });
     }
-    return res.status(200).send({
+    return returnMessage(res, 200, {
       success: true,
       details: redflag,
     });
