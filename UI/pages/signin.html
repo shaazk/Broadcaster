@@ -9,6 +9,7 @@
     <meta name="author" content="Mutesi Sharon K" />
     <link rel="stylesheet" href="../styles/addRedflag.css" />
     <link rel="stylesheet" href="../styles/signin.css" />
+    <script src="https://kit.fontawesome.com/d8ae629a21.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../styles/mainStyles.css" />
     <script src="../script/mainStyle.js" defer></script>
@@ -25,13 +26,12 @@
         </a>
         <div class="navbar-links">
             <ul>
-                <div> <input type="text" placeholder="Search .." id="search">
+                <div id="searchDiv"> <input type="text" placeholder="Search .." id="search">
                     <button type="submit" id="search-btn"><i class="fa fa-search"></i></button>
                 </div>
-                <li class="hide"><a href="addRedflag.html">Redflag </a></li>
+                <li class="hide"><a href="aboutRedflag.html">Redflag </a></li>
                 <li class="hide"><a id="line">|</a></li>
-                <li class="hide"><a href="addIntervention.html">Intervention</a></li>
-                <li><a id="line">|</a></li>
+                <li class="hide"><a href="aboutIntervention.html">Intervention</a></li>
                 <li><a href="signin.html">SignIn </a></li>
                 <li><a id="line">|</a></li>
                 <li><a href="signup.html">SignUp</a></li>
@@ -43,36 +43,54 @@
     <section class="container">
         <div class="one">
             <div class="side">
-                <img src="../images/download.jfif" /> <span>&nbsp;&nbsp;RWANDA</span><br /><br />
-                <a href="addRedflag.html" class="links">
-                    <img class="img1" src="../images/red-flag-vector-1253881 (1).jpg" />Redflag</a><br /><br />
-                <a href="addIntervention.html" class="links"><img class="img1"
-                        src="../images/red-button-help-icon-vector-19997793 (1).jpg" />Intervention</a><br /><br /><br /><br />
-                <p>Helpful links</p>
-                <div class="links1">
-                    <a href="#">About us</a><br /><br />
-                    <a href="#">Terms and conditions</a><br /><br />
-                    <a href="#">Privacy notices</a><br /><br />
-                    <a href="#">Contact us</a>
+                <div class="icon">
+                    <div class="rw"><img src="../images/download.jfif" /> &nbsp;<span>RWANDA</span></div><br /><br />
+
+                    <div class="incidents">
+                        <a href="./pages/addRedflag.html" class="links">
+                            <i class="far fa-flag"></i>&nbsp;&nbsp;Redflag</a>
+                    </div>
+                    <div class="incidents">
+
+                        <a href="./pages/addIntervention.html" class="links"><i
+                                class="fas fa-people-carry"></i>&nbsp;&nbsp;Intervention</a>
+                    </div>
+                </div>
+                <div class="fo">
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;Helpful links</p>
+                    <div class="links1">
+                        <ul>
+
+                            <li><a href="#">About us</a></li>
+                            <li><a href="#">Terms and conditions</a></li>
+                            <li><a href="#">Privacy notices</a></li>
+                            <li><a href="#">Contact us</a></li>
+
+                        </ul>
+
+                    </div>
                 </div>
             </div>
         </div>
         <div class="two">
             <div class="containerform">
-                <p id="title">You need to signin first to access your account.</p>
-                <br>
-                <label for="email"><b>Email</b></label>
-                <input type="text" placeholder="Enter Email" name="email" required>
+                <div class="sign">
+                    <p id="title">You need to signin first to access your account.</p>
+                    <br>
+                    <label for="email"><b>Email</b></label><br>
+                    <input type="text" placeholder="Enter Email" name="email" required>
+                    <br><br><br>
 
-                <label for="password"><b>Password</b></label>
-                <input type="password" placeholder="Enter Password" name="password" required>
+                    <label for="password"><b>Password</b></label><br>
+                    <input type="password" placeholder="Enter Password" name="password" required>
 
-                <div class="row">
-                    <button type="button" class="cancelbtn"><a href="../index.html">Cancel</a></button>
-                    <button type="submit" class="submitbtn"><a href="adminDashboard.html">Sign in</a></button>
+                    <div class="row">
+                        <button type="button" class="cancelbtn"><a href="../index.html">Cancel</a></button>
+                        <button type="submit" class="submitbtn"><a href="adminDashboard.html">Sign in</a></button>
+                    </div>
                 </div>
             </div>
-            </div>
+        </div>
 
     </section>
     <div class="footer">
