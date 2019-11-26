@@ -8,9 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="Mutesi Sharon K" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
     <link rel="stylesheet" href="../styles/adminPanel.css" />
     <link rel="stylesheet" href="../styles/mainStyles.css" />
+    <link rel="stylesheet" href="../styles/userDashboard.css" />
     <script src="../script/mainStyle.js" defer></script>
 </head>
 
@@ -25,7 +25,7 @@
         </a>
         <div class="navbar-links">
             <ul>
-                <div> <input type="text" placeholder="Search .." id="search">
+                <div id="searchDiv"> <input type="text" placeholder="Search .." id="search">
                     <button type="submit" id="search-btn"><i class="fa fa-search"></i></button>
                 </div>
                 <li class="hide"><a href="addIntervention.html" class="links">Add Interventions </a></li>
@@ -45,186 +45,162 @@
     <section class="container">
         <div class="one">
             <div class="side">
-                    <h1><a href="userDashboard.html">My Account</a></h1>
-                    <a href="loggedUser_addRedflag.html" class="links">Add Interventions </a>
-                <hr>
-                <a href="#" class="links">Under investigation </a>
-                <hr>
-                <a href="#" class="links">Resolved Interventions </a>
-                <hr>
-                <a href="userRedflags.html" class="links">Readflags</a>
+                <div class="icon"><a href="userDashboard.html" style="text-decoration: none;">
+                        <div class="rw"><img src="../images/Snapchat-2005017659.jpg" /> &nbsp;<span>User account</span>
+                        </div>
+                    </a><br /><br />
+                    <div class="incidents">
+                        <a href="addRedflag.html" class="links"><i class="fas fa-plus-circle"></i>&nbsp;&nbsp;Redflags
+                        </a></div>
+                    <div class="incidents">
+                        <a href="addIntervention.html" class="links"><i class="fas fa-plus-circle"></i>
+                            &nbsp;&nbsp;Interventions </a></div>
+                </div>
+                <div class="fo">
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;Helpful links</p>
+                    <div class="links1">
+                        <ul>
 
-                <hr><br />
-                <p>Helpful links</p>
-                <div class="links1">
-                    <a href="#">About us</a><br /><br />
-                    <a href="#">Terms and conditions</a><br /><br />
-                    <a href="#">Privacy notices</a><br /><br />
-                    <a href="#">Contact us</a>
+                            <li><a href="#">About us</a></li>
+                            <li><a href="#">Terms and conditions</a></li>
+                            <li><a href="#">Privacy notices</a></li>
+                            <li><a href="#">Contact us</a></li>
+
+                        </ul>
+
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="two" style="overflow-x:auto;">
-            <h1 style="font-size: 15px;">My Interventions</h1>
-            <table id="users">
-                <tr>
-                    <th>ID/Passport</th>
-                    <th>Created on</th>
-                    <th>Title</th>
-                    <th>Type</th>
-                    <th>Location</th>
-                    <th>Status</th>
-                    <th>images</th>
-                    <th>Videos</th>
-                    <th>Comment</th>
-                    <th colspan="2">Confirm action</th>
+        <div class="two">
+            <div id="fit">
+                <div class="row">
+                    <div class="column">
+                        <div class="card">
+                            <img src="../images/transparency (1).jpg" alt="Teta" style="width: 100%">
+                            <div class="containers">
+                                <p>Label: Corruption</p>
+                                <p>Status: Pending</p>
+                                <div class="btn">
+                                    <button class="button"><a href="#">Update</a></button>
+                                    <button class="button delete"><a href="#">Delete</a></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
+                    <div class="column">
+                        <div class="card">
+                            <img src="../images/transparency (1).jpg" alt="Teta" style="width: 100%">
+                            <div class="containers">
+                                <p>Label: Corruption</p>
+                                <p>Status: Pending</p>
+                                <div class="btn">
+                                    <button class="button"><a href="#">Update</a></button>
+                                    <button class="button delete"><a href="#">Delete</a></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="card">
+                            <img src="../images/transparency (1).jpg" alt="Teta" style="width: 100%">
+                            <div class="containers">
+                                <p>Label: Corruption</p>
+                                <p>Status: Pending</p>
+                                <div class="btn">
+                                    <button class="button"><a href="#">Update</a></button>
+                                    <button class="button delete"><a href="#">Delete</a></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="column">
+                            <div class="card">
+                                <img src="../images/transparency (1).jpg" alt="Teta" style="width: 100%">
+                                <div class="containers">
+                                    <p>Label: Corruption</p>
+                                    <p>Status: Pending</p>
+                                    <div class="btn">
+                                        <button class="button"><a href="#">Update</a></button>
+                                        <button class="button delete"><a href="#">Delete</a></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
+                        <div class="column">
+                            <div class="card">
+                                <img src="../images/transparency (1).jpg" alt="Teta" style="width: 100%">
+                                <div class="containers">
+                                    <p>Label: Corruption</p>
+                                    <p>Status: Pending</p>
+                                    <div class="btn">
+                                        <button class="button"><a href="#">Update</a></button>
+                                        <button class="button delete"><a href="#">Delete</a></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="card">
+                                <img src="../images/transparency (1).jpg" alt="Teta" style="width: 100%">
+                                <div class="containers">
+                                    <p>Label: Corruption</p>
+                                    <p>Status: Pending</p>
+                                    <div class="btn">
+                                        <button class="button"><a href="#">Update</a></button>
+                                        <button class="button delete"><a href="#">Delete</a></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="column">
+                                <div class="card">
+                                    <img src="../images/transparency (1).jpg" alt="Teta" style="width: 100%">
+                                    <div class="containers">
+                                        <p>Label: Corruption</p>
+                                        <p>Status: Pending</p>
+                                        <div class="btn">
+                                            <button class="button"><a href="#">Update</a></button>
+                                            <button class="button delete"><a href="#">Delete</a></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div class="card">
+                                    <img src="../images/transparency (1).jpg" alt="Teta" style="width: 100%">
+                                    <div class="containers">
+                                        <p>Label: Corruption</p>
+                                        <p>Status: Pending</p>
+                                        <div class="btn">
+                                            <button class="button"><a href="#">Update</a></button>
+                                            <button class="button delete"><a href="#">Delete</a></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div class="card">
+                                    <img src="../images/transparency (1).jpg" alt="Teta" style="width: 100%">
+                                    <div class="containers">
+                                        <p>Label: Corruption</p>
+                                        <p>Status: Pending</p>
+                                        <div class="btn">
+                                            <button class="button"><a href="#">Update</a></button>
+                                            <button class="button delete"><a href="#">Delete</a></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-                </tr>
-                <tr>
-                    <td>1997063534556</td>
-                    <td>25/06/2019</td>
-                    <td>corruption</td>
-                    <td>Redflag</td>
-                    <td>-77.0364,38.8951</td>
-                    <td>Pending</td>
-                    <td>ff.png</td>
-                    <td>ff.flv</td>
-                    <td>It was the 2nd of this...</td>
-                    <td> <input type="submit" value="Update"></td>
-                    <td><input type="submit" value="Delete"></td>
-
-                </tr>
-                <tr>
-                    <td>1997063534556</td>
-                    <td>25/06/2019</td>
-                    <td>corruption</td>
-                    <td>Redflag</td>
-                    <td>-77.0364,38.8951</td>
-                    <td>Pending</td>
-                    <td>ff.png</td>
-                    <td>ff.flv</td>
-                    <td>It was the 2nd of this...</td>
-                    <td> <input type="submit" value="Update"></td>
-                    <td><input type="submit" value="Delete"></td>
-
-                </tr>
-                <tr>
-                    <td>1997063534556</td>
-                    <td>25/06/2019</td>
-                    <td>corruption</td>
-                    <td>Redflag</td>
-                    <td>-77.0364,38.8951</td>
-                    <td>Pending</td>
-                    <td>ff.png</td>
-                    <td>ff.flv</td>
-                    <td>It was the 2nd of this...</td>
-                    <td> <input type="submit" value="Update"></td>
-                    <td><input type="submit" value="Delete"></td>
-
-                </tr>
-                <tr>
-                    <td>1997063534556</td>
-                    <td>25/06/2019</td>
-                    <td>corruption</td>
-                    <td>Redflag</td>
-                    <td>-77.0364,38.8951</td>
-                    <td>Pending</td>
-                    <td>ff.png</td>
-                    <td>ff.flv</td>
-                    <td>It was the 2nd of this...</td>
-                    <td> <input type="submit" value="Update"></td>
-                    <td><input type="submit" value="Delete"></td>
-
-                </tr>
-                <tr>
-                    <td>1997063534556</td>
-                    <td>25/06/2019</td>
-                    <td>corruption</td>
-                    <td>Redflag</td>
-                    <td>-77.0364,38.8951</td>
-                    <td>Pending</td>
-                    <td>ff.png</td>
-                    <td>ff.flv</td>
-                    <td>It was the 2nd of this...</td>
-                    <td> <input type="submit" value="Update"></td>
-                    <td><input type="submit" value="Delete"></td>
-
-                </tr>
-                <tr>
-                    <td>1997063534556</td>
-                    <td>25/06/2019</td>
-                    <td>corruption</td>
-                    <td>Redflag</td>
-                    <td>-77.0364,38.8951</td>
-                    <td>Pending</td>
-                    <td>ff.png</td>
-                    <td>ff.flv</td>
-                    <td>It was the 2nd of this...</td>
-                    <td> <input type="submit" value="Update"></td>
-                    <td><input type="submit" value="Delete"></td>
-
-                </tr>
-                <tr>
-                    <td>1997063534556</td>
-                    <td>25/06/2019</td>
-                    <td>corruption</td>
-                    <td>Redflag</td>
-                    <td>-77.0364,38.8951</td>
-                    <td>Pending</td>
-                    <td>ff.png</td>
-                    <td>ff.flv</td>
-                    <td>It was the 2nd of this...</td>
-                    <td> <input type="submit" value="Update"></td>
-                    <td><input type="submit" value="Delete"></td>
-
-                </tr>
-
-                <tr>
-                    <td>1997063534556</td>
-                    <td>25/06/2019</td>
-                    <td>corruption</td>
-                    <td>Redflag</td>
-                    <td>-77.0364,38.8951</td>
-                    <td>Pending</td>
-                    <td>ff.png</td>
-                    <td>ff.flv</td>
-                    <td>It was the 2nd of this...</td>
-                    <td> <input type="submit" value="Update"></td>
-                    <td><input type="submit" value="Delete"></td>
-
-                </tr>
-                <tr>
-                    <td>1997063534556</td>
-                    <td>25/06/2019</td>
-                    <td>corruption</td>
-                    <td>Redflag</td>
-                    <td>-77.0364,38.8951</td>
-                    <td>Pending</td>
-                    <td>ff.png</td>
-                    <td>ff.flv</td>
-                    <td>It was the 2nd of this...</td>
-                    <td> <input type="submit" value="Update"></td>
-                    <td><input type="submit" value="Delete"></td>
-
-                </tr>
-                <tr>
-                    <td>1997063534556</td>
-                    <td>25/06/2019</td>
-                    <td>corruption</td>
-                    <td>Redflag</td>
-                    <td>-77.0364,38.8951</td>
-                    <td>Pending</td>
-                    <td>ff.png</td>
-                    <td>ff.flv</td>
-                    <td>It was the 2nd of this...</td>
-                    <td> <input type="submit" value="Update"></td>
-                    <td><input type="submit" value="Delete"></td>
-
-                </tr>
-            </table>
-
+                    </div>
+                </div>
+            </div>
     </section>
     <div class="footer">
         <a href="#">About us</a>&nbsp; <span>|</span> &nbsp;

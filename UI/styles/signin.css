@@ -1,23 +1,36 @@
 
 .containerform{
-height: 470px;
+height: 200px;
 width:70% ;
+display: flex;  
+flex-direction: column;
+box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.15);
+margin-left: 150px;
+margin-top: 30px;
+
+}
+.sign{
+  height: 500px;
+width:70% ;
+margin-left: 120px;
+margin-top: 30px;
+
+
 
 }
 
-/* input[type="text"],
-input[type="password"],button {
-  width: 50%;
-} */
 @media screen and (max-width: 800px) {
     .containerform {
-            height: 470px;
-            
+      margin-left: 100px;
+      margin-top: 30px;
+      height: 200px;
+  
     }
+
   }
   @media screen and (min-width: 400px) {
     .containerform {
-            height: 565px;
+      height: 510px;
             
     }
   }
