@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Add Intervention</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Mutesi Sharon K" />
+    <link rel="stylesheet" href="../styles/addRedflag.css" />
+    <link rel="stylesheet" href="../styles/mainStyles.css" />
+    <script src="../script/mainStyle.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/d8ae629a21.js" crossorigin="anonymous"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+</head>
+
+<body>
+    <!-- navigation -->
+    <nav class="navbar">
+            <div class="brand-title"><a href="../index.html">Broadcaster</a></div>
+            <a href="#" class="toggle-button">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </a>
+            <div class="navbar-links">
+                <ul>
+                    <div id="searchDiv"> <input type="text" placeholder="Search .." id="search">
+                        <button type="submit" id="search-btn"><i class="fa fa-search"></i></button>
+                    </div>
+                    <li class="hide"> <a href="addRedflag.html" class="links"><i
+                                class="fas fa-plus-circle"></i>&nbsp;&nbsp;Redflags </a></li>
+                    <li class="hide"><a id="line">|</a></li>
+                    <li class="hide"> <a href="addIntervention.html" class="links"><i class="fas fa-plus-circle"></i>
+                            &nbsp;&nbsp;Interventions </a></li>
+                    <li><a id="hide">|</a></li>
+                    <li><a href="signin.html">Signout</a></li>
+                </ul>
+            </div>
+        </nav>
+    
+
+    <!-- content -->
+    <section class="container">
+        <div class="one">
+            <div class="side">
+                <div class="icon"><a href="userDashboard.html" style="text-decoration: none;">
+                        <div class="rw"><img src="../images/Snapchat-2005017659.jpg" /> &nbsp;<span>User account</span>
+                        </div>
+                    </a><br /><br />
+                    <div class="incidents">
+                        <a href="addRedflag.html" class="links"><i class="fas fa-plus-circle"></i>&nbsp;&nbsp;Redflags
+                        </a></div>
+                    <div class="incidents">
+                        <a href="addIntervention.html" class="links"><i class="fas fa-plus-circle"></i>
+                            &nbsp;&nbsp;Interventions </a></div>
+                </div>
+                <div class="fo">
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;Helpful links</p>
+                    <div class="links1">
+                        <ul>
+
+                            <li><a href="#">About us</a></li>
+                            <li><a href="#">Terms and conditions</a></li>
+                            <li><a href="#">Privacy notices</a></li>
+                            <li><a href="#">Contact us</a></li>
+
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="two">
+            <div class="containerform" style="height: 860px;">
+                <div class="sign">
+                    <p id="title"> Make changes on your Redflag.</p><br>
+                    <div class="row">
+                        <div class="col1">
+                            <label>Full name</label>
+                        </div>
+                        <div class="col2">
+                            <input type="text" id="name" name="name">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col1">
+                            <label>ID / Passport</label>
+                        </div>
+                        <div class="col2">
+                            <input type="number" id="id" name="id">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col1">
+                            <label>Location</label>
+                        </div>
+                        <div class="col2">
+                            <div class="info">
+                                <input type="text" id="location" name="location" placeholder="Your cordinates..">
+                                &nbsp;&nbsp;&nbsp;&nbsp;<a href="./map.html"><i class='fas fa-map-marker-alt'
+                                        style='font-size:24px;color:rgb(212, 23, 23)'></i><span>Use pin</span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col1">
+                            <label>Date</label>
+                        </div>
+                        <div class="col2">
+                            <input type="date" id="date" name="date">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col1">
+                            <label>Label</label>
+                        </div>
+                        <div class="col2">
+                            <select id="label">
+                                <option value="redflag">Road construction</option>
+                                <option value="intervation">pollution</option>
+                                <option value="intervation">Disease outbreak</option>
+                                <option value="intervation">other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col1">
+                            <label>Supporting evidence</label>
+                        </div>
+                        <div class="col2">
+
+                            <p>Image/Video &nbsp;&nbsp;<input type="file" name="image" accept="image/*video/*"
+                                    multiple="multiple"></p>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col1">
+                            <label>Your statement</label>
+                        </div>
+                        <div class="col2">
+                            <textarea id="Statement" name="Statement" style="height:200px"></textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <button type="button" class="cancelbtn"><a href="userDashboard.html">Back</a></button>
+                        <button type="submit" class="submitbtn"><a href="#">Submit</a></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+    <div class="footer">
+        <a href="#">About us</a>&nbsp; <span>|</span> &nbsp;
+        <a href="#">Terms and conditions</a>&nbsp; <span>|</span> &nbsp;
+        <a href="#">Privacy notices</a>&nbsp; <span>|</span> &nbsp;
+        <a href="#">Contact us</a>
+    </div>
+</body>
+
+</html>

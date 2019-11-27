@@ -1,85 +1,73 @@
-.d1 {
-  width: 50%;
-  height: 30px;
-  background-color: rgb(226, 55, 55);
+
+
+ .container{
+  width: 100%;
+  overflow-y: hidden;
 }
-.d2 {
-  width: 50%;
-  height: 30px;
-  background-color: rgb(226, 55, 55);
+#fit{
+  padding-bottom: 10%;
+
 }
-.d3 {
-  width: 50%;
-  height: 30px;
-  background-color: rgb(226, 55, 55);
+.btn{
+  display: flex;
+  padding-bottom: 15px;
 }
-.dashDiv {
-  width: 28%;
-  height: 550px;
+.column{
   float: left;
-  margin-left: 30px;
-  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.25);
-  /* margin-top: 70px; */
+  width: 25%;
+  margin-bottom: 16px;
+  padding: 0 18px;
+  padding-bottom:18px;
+  padding-top:18px;
+
+
 }
-.dashDiv2 {
-  width: 28%;
-  height: 550px;
-  float: left;
-  margin-left: 30px;
-  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.25);
-}
-.dashDiv3 {
-  width: 28%;
-  height: 550px;
-  float: left;
-  margin-left: 30px;
-  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.25);
-}
-.two {
-  height: 550px;
-}
-@media screen and (max-width: 200px) {
-  .dashDiv {
-    width: 90%;
-    height: 300px;
-    overflow: auto;  }
-  .dashDiv2 {
-    width: 90%;
-    height: 300px;
-  }
-  .dashDiv3 {
-    width: 90%;
-    height: 300px;
+/* column side by side in each row*/
+@media screen and (max-width: 650px){
+  .column{
+      width: 100%;
+      display: block;
   }
 }
-span {
-  color: white;
-  font-size: 15px;
-  font-weight: bold;
-  padding-left: 10px;
-  padding-top: 10px;
+/* add shadows*/
+.card{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
-table {
+.containers {
+  padding: 0 16px;
+}
+.containers::after, .row::after{
+  content:  "";
+  clear: both;
+  display: table;
+}
+.title{
+  color: grey;
+  font-size: 60px;
+}
+.title span{
+  font-size: 20px;
+}
+.button{
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  background-color: rgb(226, 55, 55);;
+  text-align: center;
+  cursor: pointer;
   width: 100%;
 }
-tr {
-  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.25);
+.button:hover{
+  background-color: #4a5568;
+}
+button a{
+  text-decoration: none;
+  color: white;
+  
 }
 
-.td1 {
-  width: 100px;
-  height: 50px;
+p{
   font-size: 14px;
-  text-align: center;
+  font-weight: bold;
 }
-.td2 {
-  width: 10px;
-  height: 50px;
-}
-.td2 img {
-  width: 20px;
-}
- h1 a{
-     text-decoration: none;
-     color: black;
- }

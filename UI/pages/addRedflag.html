@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="../styles/addRedflag.css" />
     <link rel="stylesheet" href="../styles/mainStyles.css" />
     <script src="../script/mainStyle.js" defer></script>
+    <script src="https://kit.fontawesome.com/d8ae629a21.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 </head>
 
@@ -25,117 +25,137 @@
             <span class="bar"></span>
         </a>
         <div class="navbar-links">
-                <ul>
-                    <div> <input type="text" placeholder="Search .." id="search">
-                        <button type="submit" id="search-btn"><i class="fa fa-search"></i></button>
-                    </div>
-                    <li class="hide"><a href="addRedflag.html">Redflag </a></li>
-                    <li class="hide"><a id="line">|</a></li>
-                    <li class="hide"><a href="addIntervention.html">Intervention</a></li>
-                    <li><a id="line">|</a></li>
-                    <li><a href="signin.html">SignIn </a></li>
-                    <li><a id="line">|</a></li>
-                    <li><a href="signup.html">SignUp</a></li>
-                </ul>
-            </div>
-        </nav>
-    
+            <ul>
+                <div id="searchDiv"> <input type="text" placeholder="Search .." id="search">
+                    <button type="submit" id="search-btn"><i class="fa fa-search"></i></button>
+                </div>
+                <li class="hide"> <a href="addRedflag.html" class="links"><i
+                            class="fas fa-plus-circle"></i>&nbsp;&nbsp;Redflags </a></li>
+                <li class="hide"><a id="line">|</a></li>
+                <li class="hide"> <a href="addIntervention.html" class="links"><i class="fas fa-plus-circle"></i>
+                        &nbsp;&nbsp;Interventions </a></li>
+                <li><a id="hide">|</a></li>
+                <li><a href="signin.html">Signout</a></li>
+            </ul>
+        </div>
+    </nav>
+
     <!-- content -->
     <section class="container">
         <div class="one">
             <div class="side">
-                <img src="../images/download.jfif" /> <span>&nbsp;&nbsp;RWANDA</span><br /><br />
-                <a href="./addRedflag.html" class="links">
-                    <img class="img1" src="../images/red-flag-vector-1253881 (1).jpg" />Redflag</a><br /><br />
-                <a href="./addIntervention.html" class="links"><img class="img1"
-                        src="../images/red-button-help-icon-vector-19997793 (1).jpg" />Intervention</a><br /><br /><br /><br />
-                <p>Helpful links</p>
-                <div class="links1">
-                    <a href="#">About us</a><br /><br />
-                    <a href="#">Terms and conditions</a><br /><br />
-                    <a href="#">Privacy notices</a><br /><br />
-                    <a href="#">Contact us</a>
+                <div class="icon"><a href="userDashboard.html" style="text-decoration: none;">
+                        <div class="rw"><img src="../images/Snapchat-2005017659.jpg" /> &nbsp;<span>User account</span>
+                        </div>
+                    </a><br /><br />
+                    <div class="incidents">
+                        <a href="addRedflag.html" class="links"><i class="fas fa-plus-circle"></i>&nbsp;&nbsp;Redflags
+                        </a></div>
+                    <div class="incidents">
+                        <a href="addIntervention.html" class="links"><i class="fas fa-plus-circle"></i>
+                            &nbsp;&nbsp;Interventions </a></div>
+                </div>
+                <div class="fo">
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;Helpful links</p>
+                    <div class="links1">
+                        <ul>
+
+                            <li><a href="#">About us</a></li>
+                            <li><a href="#">Terms and conditions</a></li>
+                            <li><a href="#">Privacy notices</a></li>
+                            <li><a href="#">Contact us</a></li>
+
+                        </ul>
+
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="two">
-            <form>
-                <p id="title"> Create a Redflag to bring any form of corruption to the notice of appropriate authorities
-                    and the general public.</p><br>
-                <div class="row">
-                    <div class="col1">
-                        <label>Full name</label>
-                    </div>
-                    <div class="col2">
-                        <input type="text" id="name" name="name" placeholder="Your name..">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col1">
-                        <label>ID / Passport</label>
-                    </div>
-                    <div class="col2">
-                        <input type="number" id="id" name="id" placeholder="Your ID..">
-                    </div>
-                </div>
 
-                <div class="row">
-                    <div class="col1">
-                        <label>Location</label>
-                    </div>
-                    <div class="col2">
-                        <div class="info">
-                            <input type="text" id="location" name="location" placeholder="Your cordinates..">
-                            &nbsp;&nbsp;&nbsp;&nbsp;<a href="./map.html"><i class='fas fa-map-marker-alt' style='font-size:24px;color:rgb(212, 23, 23)'></i><span>Use pin</span></a>
+
+        <div class="two">
+            <div class="containerform" style="height: 860px;">
+                <div class="sign">
+                    <p id="title"> Create a Redflag to bring any form of corruption to the notice of appropriate
+                        authorities
+                        and the general public.</p><br>
+                    <div class="row">
+                        <div class="col1">
+                            <label>Full name</label>
+                        </div>
+                        <div class="col2">
+                            <input type="text" id="name" name="name" placeholder="Your name..">
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col1">
-                        <label>Date</label>
-                    </div>
-                    <div class="col2">
-                        <input type="date" id="date" name="date">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col1">
-                        <label>Label</label>
+                    <div class="row">
+                        <div class="col1">
+                            <label>ID / Passport</label>
+                        </div>
+                        <div class="col2">
+                            <input type="number" id="id" name="id" placeholder="Your ID..">
+                        </div>
                     </div>
 
-                    <div class="col2">
-                        <select id="label">
-                            <option value="redflag">Corruption</option>
-                            <option value="intervation">Bribery</option>
-                            <option value="intervation">other</option>
-                        </select>
+                    <div class="row">
+                        <div class="col1">
+                            <label>Location</label>
+                        </div>
+                        <div class="col2">
+                            <div class="info">
+                                <input type="text" id="location" name="location" placeholder="Your cordinates..">
+                                &nbsp;&nbsp;&nbsp;&nbsp;<a href="./map.html"><i class='fas fa-map-marker-alt'
+                                        style='font-size:24px;color:rgb(212, 23, 23)'></i><span>Use pin</span></a>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col1">
-                        <label>Supporting evidence</label>
+                    <div class="row">
+                        <div class="col1">
+                            <label>Date</label>
+                        </div>
+                        <div class="col2">
+                            <input type="date" id="date" name="date">
+                        </div>
                     </div>
-                    <div class="col2">
+                    <div class="row">
+                        <div class="col1">
+                            <label>Label</label>
+                        </div>
 
-                        <p>Image &nbsp;&nbsp;<input type="file" name="image" accept="image/*" multiple="multiple"></p>
-                        <p> Video &nbsp;&nbsp;<input type="file" name="video" accept="video/*" multiple="multiple"></p>
+                        <div class="col2">
+                            <select id="label">
+                                <option value="redflag">Corruption</option>
+                                <option value="intervation">Bribery</option>
+                                <option value="intervation">other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col1">
+                            <label>Supporting evidence</label>
+                        </div>
+                        <div class="col2">
 
+                            <p>Image/Video &nbsp;&nbsp;<input type="file" name="image" accept="image/*video/*"
+                                    multiple="multiple"></p>
+
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col1">
-                        <label>Your statement</label>
+                    <div class="row">
+                        <div class="col1">
+                            <label>Your statement</label>
+                        </div>
+                        <div class="col2">
+                            <textarea id="Statement" name="Statement" placeholder="Statement "
+                                style="height:200px"></textarea>
+                        </div>
                     </div>
-                    <div class="col2">
-                        <textarea id="Statement" name="Statement" placeholder="Statement "
-                            style="height:200px"></textarea>
-                    </div>
-                </div>
-                <div class="row">
+                    <div class="row">
                         <button type="button" class="cancelbtn"><a href="../index.html">Cancel</a></button>
                         <button type="submit" class="submitbtn"><a href="#">Submit</a></button>
-         </div>
-            </form>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </section>
     <div class="footer">

@@ -1,0 +1,74 @@
+
+
+ .container{
+    width: 100%;
+    overflow-y: hidden;
+  }
+  #fit{
+    padding-bottom: 10%;
+  
+  }
+  .btn{
+    display: flex;
+    padding-bottom: 15px;
+  }
+  .column{
+    float: left;
+    width: 25%;
+    margin-bottom: 16px;
+    padding: 0 18px;
+    padding-bottom:18px;
+    padding-top:18px;
+  
+
+  }
+
+  /* column side by side in each row*/
+  @media screen and (max-width: 650px){
+    .column{
+        width: 50%;
+        display: block;
+    }
+  }
+  /* add shadows*/
+  .card{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  }
+  .containers {
+    padding: 0 16px;
+  }
+  .containers::after, .row::after{
+    content:  "";
+    clear: both;
+    display: table;
+  }
+  .title{
+    color: grey;
+    font-size: 60px;
+  }
+  .title span{
+    font-size: 20px;
+  }
+  .button{
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    background-color: rgb(226, 55, 55);;
+    text-align: center;
+    cursor: pointer;
+    width: 50%;
+  }
+  .button:hover{
+    background-color: #4a5568;
+  }
+  button a{
+    text-decoration: none;
+    color: white;
+    
+  }
+  
+  p{
+    font-size: 14px;
+    font-weight: bold;
+  }
