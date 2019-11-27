@@ -8,22 +8,18 @@ const userController = {
   signup: (req, res) => {
     const user = new User(
       req.body.userId,
-      req.body.fullname,
+      req.body.fullName,
       req.body.email,
       req.body.password,
-      req.body.PhoneNumber,
+      req.body.phoneNumber,
       req.body.username,
     );
     users.push(user);
-    const genToken = jwt.sign(
-      { email: user.email, ignoreExpiration: true },
-      process.env.KEY,
-    );
-    return returnMessage(res, 201, 'User created successfully', genToken, {
+    return returnMessage(res, 201, 'User created successfully', {
       userId: user.userId,
-      fullname: user.fullname,
+      fullName: user.fullName,
       email: user.email,
-      PhoneNumber: user.PhoneNumber,
+      phoneNumber: user.phoneNumber,
       username: user.username,
     });
   },
@@ -38,15 +34,15 @@ const userController = {
         { email: loggedUser.email, ignoreExpiration: true },
         process.env.KEY,
       );
-      return returnMessage(res, 200, 'User is successfully logged in', genToken, {
+      return returnMessage(res, 200, 'User is successfully logged in', {
         userId: loggedUser.userId,
-        fullname: loggedUser.fullname,
+        fullName: loggedUser.fullName,
         email: loggedUser.email,
-        PhoneNumber: loggedUser.PhoneNumber,
+        phoneNumber: loggedUser.phoneNumber,
         username: loggedUser.username,
-      });
+      }, genToken);
     }
-    return returnMessage(res, 404, 'Your email or password is incorrect.');
+    return returnMessage(res, 401, 'Your email or password is incorrect.');
   },
 };
 

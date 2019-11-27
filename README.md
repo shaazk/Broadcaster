@@ -1,5 +1,4 @@
-[![Build Status](https://travis-ci.org/shaazk/Broadcaster.svg?branch=develop)](https://travis-ci.org/shaazk/Broadcaster) [![Maintainability](https://api.codeclimate.com/v1/badges/31f7a555c0c36d16a57e/maintainability)](https://codeclimate.com/github/shaazk/Broadcaster/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/31f7a555c0c36d16a57e/test_coverage)](https://codeclimate.com/github/shaazk/Broadcaster/test_coverage)
-
+[![Build Status](https://travis-ci.org/shaazk/Broadcaster.svg?branch=develop)](https://travis-ci.org/shaazk/Broadcaster) [![Maintainability](https://api.codeclimate.com/v1/badges/31f7a555c0c36d16a57e/maintainability)](https://codeclimate.com/github/shaazk/Broadcaster/maintainability) [![Coverage Status](https://coveralls.io/repos/github/shaazk/Broadcaster/badge.svg?branch=develop)](https://coveralls.io/github/shaazk/Broadcaster?branch=develop)
 
 # Broadcaster
 Corruption is a huge bane to Africa’s development. African countries must develop novel and localized solutions that will curb this menace, hence the birth of Broadcaster. Broadcaster enables any/every citizen to bring any form of corruption to the notice of appropriate authorities and the general public. Users can also report on things that need government intervention
@@ -52,8 +51,90 @@ User page
 |api/v1/interventions|GET|Get all interventions|
 |/api/v1/interventions/<:incident-id>|GET|View a specific intervention|
 
+# Installation and Environment Setup
 
+**Clone the repository from [Github](https://github.com/gitego-brian/BroadCaster).**
 
+( You will need **Git** for this if you are running a Windows PC, Get it [HERE](https://git-scm.com/) )
+
+```
+git clone https://github.com/shaazk/Broadcaster.git
+```
+
+**To Install all dependencies:**
+
+```
+npm install
+```
+**To run the tests:**
+
+```
+npm run test
+```
+
+**Now to start the app:**
+
+```
+npm run start
+``` 
+**To start the app in development mode:**
+
+( You need **nodemon** installed for this, run `npm i -g nodemon` to install it )
+
+```
+npm run dev
+```
+
+Test the endpoints in your favorite API client, I strongly recommend [Postman](https://www.getpostman.com/) though :ok_hand:
+
+## Sample Request
+### Request body for sign up
+
+```js
+{
+    "userId": "1234567890123456",
+    "fullName": "sharon k",
+    "email": "sharonuashy@gmail.com",
+    "password": "jhjjhgjhg",
+    "phoneNumber": "5657657",
+    "username": "tesi"
+}
+```
+### Response body for signup
+```js
+{
+    "status": 201,
+    "message": "User created successfully",
+    "data": {
+        "userId": "1234567890123456",
+        "fullName": "sharon k",
+        "email": "sharonuashy@gmail.com",
+        "phoneNumber": "5657657",
+        "username": "tesi"
+    }
+}
+```
+### Request body for sign up
+```js
+{
+    "email": "sharonuashy@gmail.com",
+    "password": "jhjjhgjhg"
+}
+```
+### Response body for signup
+```js
+    "status": 200,
+    "message": "User is successfully logged in",
+    "data": {
+        "userId": "1234567890123456",
+        "fullName": "sharon k",
+        "email": "sharonuashy@gmail.com",
+        "phoneNumber": "5657657",
+        "username": "tesi"
+    },
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNoYXJvbnVhc2h5QGdtYWlsLmNvbSIsImlnbm9yZUV4cGlyYXRpb24iOnRydWUsImlhdCI6MTU3NDk2ODE0MX0.jRaIIPp0xNtq8X_egUF6tFhzeHSjeJUqwR-wT-opL5c"
+}
+```
 ### Backend Tools used
  - Server side Framework: [Node/Express](https://expressjs.com/)
  - Linting Library: [ESLint](https://eslint.org/)

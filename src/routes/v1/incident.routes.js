@@ -1,7 +1,7 @@
 import express from 'express';
-import { incidentController } from '../../controllers/incident.controller';
-import { redflagController } from '../../controllers/redflag.controller';
-import { interventionController } from '../../controllers/intervention.controller';
+import incidentController from '../../controllers/incident.controller';
+import redflagController from '../../controllers/redflag.controller';
+import interventionController from '../../controllers/intervention.controller';
 import verifyToken from '../../middleware/token.middleware';
 
 const router = express.Router();
