@@ -1,6 +1,6 @@
-/* eslint-disable max-len */
-const returnMessage = (res, status, message, token = undefined, data = undefined) => res.status(status).send({
-  status, message, token, data,
+const returnMessage = (res, status, message,
+  data = undefined, token = undefined) => res.status(status).send({
+  status, message, data, token,
 });
 
 export default returnMessage;

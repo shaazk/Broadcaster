@@ -1,11 +1,8 @@
-/* eslint-disable import/prefer-default-export */
-/* eslint-disable max-len */
-/* eslint-disable eqeqeq */
-/* eslint-disable comma-dangle */
+
 import Joi from '@hapi/joi';
 import returnMessage from '../helpers/response.helper';
 import { incidents } from '../db/data';
-import { Incident } from '../model/incident.model';
+import Incident from '../model/incident.model';
 
 const schema = {
   createIncident: Joi.object({
@@ -30,7 +27,7 @@ const schema = {
   }),
 };
 
-export const incidentController = {
+const incidentController = {
   createIncident: async (req, res) => {
     try {
       await schema.createIncident.validateAsync(req.body);
@@ -57,9 +54,11 @@ export const incidentController = {
 
   updateComment: (req, res) => {
     if (req.user.role === 'citizen') {
-      const index = incidents.findIndex((item) => item.incidentId.toString() === req.params.incidentId);
+      const index = incidents.findIndex(
+        (item) => item.incidentId.toString() === req.params.incidentId,
+      );
       if (index > -1) {
-        if (incidents[index].status != 'pending') {
+        if (incidents[index].status !== 'pending') {
           return returnMessage(res, 404, {
             message: 'You are not allowed to update this incident',
           });
@@ -67,6 +66,7 @@ export const incidentController = {
 
         incidents[index].comment = req.body.comment;
         return returnMessage(res, 200, {
+          id: incidents[index].incidentId,
           message: 'Updated red-flag record’s comment',
         });
       }
@@ -80,9 +80,11 @@ export const incidentController = {
   },
   updateLocation: (req, res) => {
     if (req.user.role === 'citizen') {
-      const index = incidents.findIndex((item) => item.incidentId.toString() === req.params.incidentId);
+      const index = incidents.findIndex(
+        (item) => item.incidentId.toString() === req.params.incidentId,
+      );
       if (index > -1) {
-        if (incidents[index].status != 'pending') {
+        if (incidents[index].status !== 'pending') {
           return returnMessage(res, 404, {
             message: 'You are not allowed to update this incident',
           });
@@ -90,6 +92,7 @@ export const incidentController = {
 
         incidents[index].location = req.body.location;
         return returnMessage(res, 200, {
+          id: incidents[index].incidentId,
           message: 'Updated red-flag record’s location',
         });
       }
@@ -102,11 +105,14 @@ export const incidentController = {
     });
   },
   deleteIncident: (req, res) => {
-    const deleteRedFlag = incidents.findIndex((item) => item.incidentId.toString() === req.params.incidentId);
+    const deleteRedFlag = incidents.findIndex(
+      (item) => item.incidentId.toString() === req.params.incidentId,
+    );
     if (deleteRedFlag > -1) {
-      if (incidents[deleteRedFlag].status != 'pending') {
+      if (incidents[deleteRedFlag].status !== 'pending') {
         return returnMessage(res, 404, {
-          message: 'You are not allowed to update this incident',
+          id: incidents[deleteRedFlag].incidentId,
+          message: 'You are not allowed to delete this incident',
         });
       }
 
@@ -115,7 +121,10 @@ export const incidentController = {
         message: 'Red-flag successfully deleted',
       });
     }
-    return 0;
+    return returnMessage(res, 404, {
+      message: 'invalid ID',
+    });
   },
 
 };
+export default incidentController;

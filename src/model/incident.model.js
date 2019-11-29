@@ -1,5 +1,4 @@
-/* eslint-disable import/prefer-default-export */
-export class Incident {
+class Incident {
   constructor(IncidentId, createdOn, createdBy, title, type, location, images, videos, comment, status = 'pending') {
     this.incidentId = IncidentId;
     this.createdOn = createdOn;
@@ -13,3 +12,4 @@ export class Incident {
     this.status = status;
   }
 }
+export default Incident;

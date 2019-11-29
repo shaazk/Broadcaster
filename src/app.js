@@ -15,5 +15,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 // router middleware
 app.use('/api/v1', router, incidentRouter);
-
+app.get('/', (req, res) => {
+  res.status(200).send({
+    status: 200,
+    message: 'this is my default route',
+  });
+});
 export default app;

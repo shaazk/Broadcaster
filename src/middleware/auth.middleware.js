@@ -8,7 +8,7 @@ const schema = {
     userId: Joi.number()
       .min(16)
       .required(),
-    fullname: Joi.string()
+    fullName: Joi.string()
       .min(8)
       .required(),
     email: Joi.string()
@@ -18,7 +18,7 @@ const schema = {
     password: Joi.string()
       .min(8)
       .required(),
-    PhoneNumber: Joi.number()
+    phoneNumber: Joi.number()
       .min(10)
       .required(),
     username: Joi.string()

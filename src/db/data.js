@@ -1,5 +1,5 @@
 import User from '../model/user.model';
-import { Incident } from '../model/incident.model';
+import Incident from '../model/incident.model';
 
 
 export const users = [
