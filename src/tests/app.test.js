@@ -9,7 +9,7 @@ import dummyData from './data.test';
 chai.use(chaiHttp);
 let id;
 let id2;
-describe('auth:', () => {
+describe('Broadcaster tests:', () => {
   it('should create new user.', (done) => {
     chai
       .request(app)
