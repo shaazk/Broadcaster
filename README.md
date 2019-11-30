@@ -5,7 +5,7 @@ A simple backend for Broadcaster
 > Simple but powerfully made .
 > Evaluation Criteria:
 The system must have:
-Home page
+- Home page
 - Login
 - Sign up
 - About red-flag and intervention
