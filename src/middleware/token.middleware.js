@@ -14,7 +14,7 @@ const verifyToken = (req, res, next) => {
 
   try {
     const verified = jwt.verify(token, process.env.KEY);
-    const user = users.find((user) => user.email === verified.email);
+    const user = users.find((user) => user.userId === verified.payload.id);
     if (!user) {
       return returnMessage(res, 401, {
         message: 'Invalid token!',
