@@ -6,8 +6,8 @@
   "scripts": {
     "start": "babel-node ./src/server.js",
     "build": "babel src --out-dir src/build",
-    "dev": "node_modules/.bin/nodemon ./src/server.js --exec babel-node --",
-    "test": "nyc --reporter=text --reporter=html mocha ./src/tests/**/*.js --require @babel/polyfill --require @babel/register --exit",
+    "dev": "cross-env NODE_ENV=production node_modules/.bin/nodemon ./src/server.js --exec babel-node --",
+    "test": "cross-env NODE_ENV=testing nyc --reporter=text --reporter=html mocha ./src/tests/**/*.js --require @babel/polyfill --require @babel/register --exit",
     "coveralls": "nyc report --reporter=text-lcov | coveralls",
     "showCoverage": "start coverage/lcov-reporter/index.html",
     "stop-win": "Taskkill /IM node.exe /F"
@@ -28,9 +28,11 @@
     "body-parser": "^1.19.0",
     "coverage": "^0.4.1",
     "coveralls": "^3.0.8",
+    "cross-env": "^6.0.3",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "jsonwebtoken": "^8.5.1"
+    "jsonwebtoken": "^8.5.1",
+    "pg": "^7.14.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.7.0",
