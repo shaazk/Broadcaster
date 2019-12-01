@@ -37,9 +37,11 @@ const schema = {
 };
 
 export const ifExist = (req, res, next) => {
-  const logUser = users.find((user) => user.email === req.body.email);
+  const logUser = users.find(
+    (user) => user.email === req.body.email || user.userId === req.body.userId,
+  );
   if (logUser) {
-    return returnMessage(res, 409, 'Email already exists');
+    return returnMessage(res, 409, 'Provided Email or ID already exists.');
   }
   next();
   return 0;
