@@ -1,9 +1,9 @@
 import jwt from 'jsonwebtoken';
-import { users } from '../db/data';
+import db from '../db/db';
 import returnMessage from '../helpers/response.helper';
 
 
-const verifyToken = (req, res, next) => {
+const verifyToken = async (req, res, next) => {
   const token = req.header('token');
 
   if (!token) {
@@ -14,7 +14,9 @@ const verifyToken = (req, res, next) => {
 
   try {
     const verified = jwt.verify(token, process.env.KEY);
-    const user = users.find((user) => user.userId === verified.payload.id);
+    const query = await db.selectBy('users', 'userId', verified.payload.id);
+    const user = query.rows[0];
+
     if (!user) {
       return returnMessage(res, 401, {
         message: 'Invalid token!',
