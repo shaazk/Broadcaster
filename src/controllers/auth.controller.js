@@ -16,14 +16,17 @@ const userController = {
         req.body.username,
         'citizen',
       );
-      await db.insertIntoUser(user);
-      return returnMessage(res, 201, 'User created successfully', {
-        userId: parseInt(user.userId, 0),
-        fullName: user.fullName,
-        email: user.email,
-        phoneNumber: user.phoneNumber,
-        username: user.username,
-      });
+      const data = await db.insertIntoUser(user);
+      if (data) {
+        return returnMessage(res, 201, 'User created successfully', {
+          userId: parseInt(user.userId, 0),
+          fullName: user.fullName,
+          email: user.email,
+          phoneNumber: user.phoneNumber,
+          username: user.username,
+        });
+      }
+      return returnMessage(res, 401, 'Data was not successfully recorded.');
     } catch (error) {
       return returnMessage(res, 500, 'Internal server error');
     }

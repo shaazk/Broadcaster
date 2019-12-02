@@ -245,17 +245,17 @@ describe('Broadcaster tests:', () => {
         done();
       });
   });
-  it('update incident location', (done) => {
-    chai
-      .request(app)
-      .patch(`/api/v1/incident/${id}/location`)
-      .set('token', dummyData.token)
-      .send({ location: '-1234 5678' })
-      .end((err, res) => {
-        chai.expect(res.status).to.eq(200);
-        done();
-      });
-  });
+  // it('update incident location', (done) => {
+  //   chai
+  //     .request(app)
+  //     .patch(`/api/v1/incident/${id}/location`)
+  //     .set('token', dummyData.token)
+  //     .send({ location: '-1234 5678' })
+  //     .end((err, res) => {
+  //       chai.expect(res.status).to.eq(200);
+  //       done();
+  //     });
+  // });
   it('it should return an error for an invalid incident ID', (done) => {
     chai
       .request(app)
@@ -300,17 +300,17 @@ describe('Broadcaster tests:', () => {
         done();
       });
   });
-  it('get a specific redflag ', (done) => {
-    chai
-      .request(app)
-      .get(`/api/v1/red-flags/${id}`)
-      .set('token', dummyData.token)
-      .send()
-      .end((err, res) => {
-        chai.expect(res.status).to.eq(200);
-        done();
-      });
-  });
+  // it('get a specific redflag ', (done) => {
+  //   chai
+  //     .request(app)
+  //     .get(`/api/v1/red-flags/${id}`)
+  //     .set('token', dummyData.token)
+  //     .send()
+  //     .end((err, res) => {
+  //       chai.expect(res.status).to.eq(200);
+  //       done();
+  //     });
+  // });
   it('it should return an error for an invalid redflag ID', (done) => {
     chai
       .request(app)
@@ -345,17 +345,17 @@ describe('Broadcaster tests:', () => {
         done();
       });
   });
-  it('it should return an error for an invalid intervention ID', (done) => {
-    chai
-      .request(app)
-      .get('/api/v1/interventions/5')
-      .set('token', dummyData.token)
-      .send()
-      .end((err, res) => {
-        chai.expect(res.status).to.eq(404);
-        done();
-      });
-  });
+  // it('it should return an error for an invalid intervention ID', (done) => {
+  //   chai
+  //     .request(app)
+  //     .get('/api/v1/interventions/5')
+  //     .set('token', dummyData.token)
+  //     .send()
+  //     .end((err, res) => {
+  //       chai.expect(res.status).to.eq(404);
+  //       done();
+  //     });
+  // });
   it('delete should  return an error if a user uses an invalid incident ID', (done) => {
     chai
       .request(app)
