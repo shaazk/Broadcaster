@@ -1,7 +1,7 @@
 import bcrypt from 'bcrypt';
 import Joi from '@hapi/joi';
 import returnMessage from '../helpers/response.helper';
-import { users } from '../db/data';
+import db from '../db/db';
 
 const schema = {
   signup: Joi.object({
@@ -36,11 +36,10 @@ const schema = {
   }),
 };
 
-export const ifExist = (req, res, next) => {
-  const logUser = users.find(
-    (user) => user.email === req.body.email || user.userId === req.body.userId,
-  );
-  if (logUser) {
+export const ifExist = async (req, res, next) => {
+  const logUser = await db.selectUser(req.body.email, req.body.userId);
+  const rowCount = logUser.rows[0].count;
+  if (rowCount > 0) {
     return returnMessage(res, 409, 'Provided Email or ID already exists.');
   }
   next();

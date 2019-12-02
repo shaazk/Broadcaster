@@ -16,8 +16,8 @@ const schema = {
     location: Joi.string()
       .min(3)
       .required(),
-    images: Joi.array().required(),
-    videos: Joi.array().required(),
+    images: Joi.required(),
+    videos: Joi.required(),
     comment: Joi.string()
       .min(3)
       .required(),
