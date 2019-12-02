@@ -2,8 +2,7 @@ node_modules
 .env
 package-lock.json
 # Coverage directory used by tools like istanbul
-/coverage.data
-/coverage/
+coverage
 *.lcov
 
 # nyc test coverage
