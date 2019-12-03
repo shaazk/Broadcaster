@@ -1,6 +1,5 @@
-
 import returnMessage from '../helpers/response.helper';
-import { incidents } from '../db/data';
+// import { incidents } from '../db/data';
 import Incident from '../model/incident.model';
 import db from '../db/db';
 
@@ -32,7 +31,14 @@ const incidentController = {
   updateComment: async (req, res) => {
     try {
       if (req.user.role === 'citizen') {
-        const query = await db.updateIncident(parseInt(req.params.incidentId, 0), 'comment', req.body.comment, req.user.userid);
+        const { comment } = req.body;
+        const { incidentId } = req.params;
+        const query = await db.updateIncident(
+          parseInt(incidentId, 0),
+          'comment',
+          comment,
+          req.user.userid,
+        );
 
         if (query.rowCount === 1) {
           return returnMessage(res, 200, {
@@ -51,22 +57,20 @@ const incidentController = {
       return returnMessage(res, 500, 'Internal server error');
     }
   },
-  updateLocation: (req, res) => {
+  updateLocation: async (req, res) => {
     try {
       if (req.user.role === 'citizen') {
-        const index = incidents.findIndex(
-          (item) => item.incidentId.toString() === req.params.incidentId,
+        const { location } = req.body;
+        const { incidentId } = req.params;
+        const query = await db.updateIncident(
+          parseInt(incidentId, 0),
+          'location',
+          location,
+          req.user.userid,
         );
-        if (index > -1) {
-          if (incidents[index].status !== 'pending') {
-            return returnMessage(res, 404, {
-              message: 'You are not allowed to update this incident',
-            });
-          }
-
-          incidents[index].location = req.body.location;
+        if (query.rowCount === 1) {
           return returnMessage(res, 200, {
-            id: incidents[index].incidentId,
+            id: req.params.incidentId,
             message: 'Updated red-flag record’s location',
           });
         }
@@ -83,7 +87,12 @@ const incidentController = {
   },
   deleteIncident: async (req, res) => {
     try {
-      const query = await db.deleteIfExist('incident', 'incidentid', parseInt(req.params.incidentId, 0), req.user.userid);
+      const query = await db.deleteIfExist(
+        'incident',
+        'incidentid',
+        parseInt(req.params.incidentId, 0),
+        req.user.userid,
+      );
 
       if (query.rowCount === 1) {
         return returnMessage(res, 200, {
@@ -98,6 +107,5 @@ const incidentController = {
       return returnMessage(res, 500, 'Internal server error');
     }
   },
-
 };
 export default incidentController;
