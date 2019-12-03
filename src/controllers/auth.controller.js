@@ -7,26 +7,27 @@ import db from '../db/db';
 const userController = {
   signup: async (req, res) => {
     try {
+      const {
+        userId, fullName, email, password, phoneNumber, username,
+      } = req.body;
       const user = new User(
-        req.body.userId,
-        req.body.fullName,
-        req.body.email,
-        req.body.password,
-        req.body.phoneNumber,
-        req.body.username,
+        userId,
+        fullName,
+        email,
+        password,
+        phoneNumber,
+        username,
         'citizen',
       );
-      const data = await db.insertIntoUser(user);
-      if (data) {
-        return returnMessage(res, 201, 'User created successfully', {
-          userId: parseInt(user.userId, 0),
-          fullName: user.fullName,
-          email: user.email,
-          phoneNumber: user.phoneNumber,
-          username: user.username,
-        });
-      }
-      return returnMessage(res, 401, 'Data was not successfully recorded.');
+      await db.insertIntoUser(user);
+      // const userData = data.rows[0];
+      return returnMessage(res, 201, 'User created successfully', {
+        userId: parseInt(user.userId, 0),
+        fullName: user.fullName,
+        email: user.email,
+        phoneNumber: user.phoneNumber,
+        username: user.username,
+      });
     } catch (error) {
       return returnMessage(res, 500, 'Internal server error');
     }
@@ -34,13 +35,17 @@ const userController = {
 
   signin: async (req, res) => {
     try {
-      const query = await db.selectBy('users', 'email', req.body.email);
+      const {
+        email, password,
+      } = req.body;
+
+      const query = await db.selectBy('users', 'email', email);
       const loggedUser = query.rows[0];
       let isPasswordCorrect;
 
       if (loggedUser) {
         isPasswordCorrect = await bcrypt.compare(
-          req.body.password,
+          password,
           loggedUser.password,
         );
       }

@@ -6,16 +6,20 @@ import db from '../db/db';
 const incidentController = {
   createIncident: async (req, res) => {
     try {
+      const {
+        createdOn, userid, title, type, location, images, videos, comment,
+      } = req.body;
+
       const userIncident = new Incident(
         1,
-        req.body.createdOn,
-        req.user.userid,
-        req.body.title,
-        req.body.type,
-        req.body.location,
-        req.body.images,
-        req.body.videos,
-        req.body.comment,
+        createdOn,
+        userid,
+        title,
+        type,
+        location,
+        images,
+        videos,
+        comment,
         'pending',
       );
       const query = await db.insertIntoIncident(userIncident);
