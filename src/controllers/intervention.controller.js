@@ -16,8 +16,8 @@ const interventionController = {
   getSpecificIntervention: async (req, res) => {
     try {
       const query = await db.userSelectBy('INCIDENT', 'incidentid', req.params.incidentId, req.user.userid);
-      const intervention = query.rows[0];
-      if (!intervention || intervention.type !== 'intervention') {
+      const incident = query.rows[0];
+      if (!incident || incident.type !== 'intervention') {
         return returnMessage(res, 404, {
           success: false,
           message: 'The intervention does not exist, check your ID',
@@ -25,7 +25,7 @@ const interventionController = {
       }
       return returnMessage(res, 200, {
         success: true,
-        details: intervention,
+        details: incident,
       });
     } catch (error) {
       return returnMessage(res, 500, 'Internal server error');
