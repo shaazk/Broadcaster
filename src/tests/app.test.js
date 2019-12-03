@@ -13,7 +13,7 @@ describe('Broadcaster tests:', () => {
   it('should create new user.', (done) => {
     chai
       .request(app)
-      .post('/api/v1/auth/signup')
+      .post('/api/v2/auth/signup')
       .send(dummyData.signup)
       .end((err, res) => {
         chai.expect(res.status).to.eq(201);
@@ -25,7 +25,7 @@ describe('Broadcaster tests:', () => {
     const { password, ...data } = dummyData.signup;
     chai
       .request(app)
-      .post('/api/v1/auth/signup')
+      .post('/api/v2/auth/signup')
       .send(data)
       .end((err, res) => {
         chai.expect(res.status).to.eq(409);
@@ -36,7 +36,7 @@ describe('Broadcaster tests:', () => {
     const { email, ...data } = dummyData.signup;
     chai
       .request(app)
-      .post('/api/v1/auth/signup')
+      .post('/api/v2/auth/signup')
       .send(data)
       .end((err, res) => {
         chai.expect(res.status).to.eq(409);
@@ -47,7 +47,7 @@ describe('Broadcaster tests:', () => {
   it('should return error if email already exists', (done) => {
     chai
       .request(app)
-      .post('/api/v1/auth/signup')
+      .post('/api/v2/auth/signup')
       .send(dummyData.signup)
       .end((err, res) => {
         chai.expect(res.status).to.eq(409);
@@ -58,7 +58,7 @@ describe('Broadcaster tests:', () => {
   it('should sign in', (done) => {
     chai
       .request(app)
-      .post('/api/v1/auth/signin')
+      .post('/api/v2/auth/signin')
       .send(dummyData.signin)
       .end((err, res) => {
         chai.expect(res.status).to.eq(200);
@@ -70,7 +70,7 @@ describe('Broadcaster tests:', () => {
   it('should not sign in with an incorrect email or password', (done) => {
     chai
       .request(app)
-      .post('/api/v1/auth/signin')
+      .post('/api/v2/auth/signin')
       .send(dummyData.invalidPassword)
       .end((err, res) => {
         chai.expect(res.status).to.eq(401);
@@ -81,7 +81,7 @@ describe('Broadcaster tests:', () => {
   it('should create a new incident', (done) => {
     chai
       .request(app)
-      .post('/api/v1/incident')
+      .post('/api/v2/incident')
       .set('token', dummyData.token)
       .send(dummyData.incident)
       .end((err, res) => {
@@ -94,7 +94,7 @@ describe('Broadcaster tests:', () => {
     const { location, ...data } = dummyData.incident;
     chai
       .request(app)
-      .post('/api/v1/auth/signup')
+      .post('/api/v2/auth/signup')
       .send(data)
       .end((err, res) => {
         chai.expect(res.status).to.eq(409);
@@ -105,7 +105,7 @@ describe('Broadcaster tests:', () => {
     const { createdOn, ...data } = dummyData.incident;
     chai
       .request(app)
-      .post('/api/v1/auth/signup')
+      .post('/api/v2/auth/signup')
       .send(data)
       .end((err, res) => {
         chai.expect(res.status).to.eq(409);
@@ -116,7 +116,7 @@ describe('Broadcaster tests:', () => {
     const { createdBy, ...data } = dummyData.incident;
     chai
       .request(app)
-      .post('/api/v1/auth/signup')
+      .post('/api/v2/auth/signup')
       .send(data)
       .end((err, res) => {
         chai.expect(res.status).to.eq(409);
@@ -127,7 +127,7 @@ describe('Broadcaster tests:', () => {
     const { title, ...data } = dummyData.incident;
     chai
       .request(app)
-      .post('/api/v1/auth/signup')
+      .post('/api/v2/auth/signup')
       .send(data)
       .end((err, res) => {
         chai.expect(res.status).to.eq(409);
@@ -138,7 +138,7 @@ describe('Broadcaster tests:', () => {
     const { type, ...data } = dummyData.incident;
     chai
       .request(app)
-      .post('/api/v1/auth/signup')
+      .post('/api/v2/auth/signup')
       .send(data)
       .end((err, res) => {
         chai.expect(res.status).to.eq(409);
@@ -149,7 +149,7 @@ describe('Broadcaster tests:', () => {
     const { location, ...data } = dummyData.incident;
     chai
       .request(app)
-      .post('/api/v1/auth/signup')
+      .post('/api/v2/auth/signup')
       .send(data)
       .end((err, res) => {
         chai.expect(res.status).to.eq(409);
@@ -160,7 +160,7 @@ describe('Broadcaster tests:', () => {
     const { images, ...data } = dummyData.incident;
     chai
       .request(app)
-      .post('/api/v1/auth/signup')
+      .post('/api/v2/auth/signup')
       .send(data)
       .end((err, res) => {
         chai.expect(res.status).to.eq(409);
@@ -171,7 +171,7 @@ describe('Broadcaster tests:', () => {
     const { videos, ...data } = dummyData.incident;
     chai
       .request(app)
-      .post('/api/v1/auth/signup')
+      .post('/api/v2/auth/signup')
       .send(data)
       .end((err, res) => {
         chai.expect(res.status).to.eq(409);
@@ -182,7 +182,7 @@ describe('Broadcaster tests:', () => {
     const { comment, ...data } = dummyData.incident;
     chai
       .request(app)
-      .post('/api/v1/auth/signup')
+      .post('/api/v2/auth/signup')
       .send(data)
       .end((err, res) => {
         chai.expect(res.status).to.eq(409);
@@ -192,7 +192,7 @@ describe('Broadcaster tests:', () => {
   it('should create a new incident.', (done) => {
     chai
       .request(app)
-      .post('/api/v1/incident')
+      .post('/api/v2/incident')
       .set('token', dummyData.token)
       .send(dummyData.incident)
       .end((err, res) => {
@@ -203,7 +203,7 @@ describe('Broadcaster tests:', () => {
   it('should create a new incident.', (done) => {
     chai
       .request(app)
-      .post('/api/v1/incident')
+      .post('/api/v2/incident')
       .set('token', dummyData.token)
       .send(dummyData.incident)
       .end((err, res) => {
@@ -214,7 +214,7 @@ describe('Broadcaster tests:', () => {
   it('new incident', (done) => {
     chai
       .request(app)
-      .post('/api/v1/incident')
+      .post('/api/v2/incident')
       .set('token', dummyData.token)
       .send(dummyData.incident)
       .end((err, res) => {
@@ -226,7 +226,7 @@ describe('Broadcaster tests:', () => {
   it('update incident comment', (done) => {
     chai
       .request(app)
-      .patch(`/api/v1/incident/${id}/comment`)
+      .patch(`/api/v2/incident/${id}/comment`)
       .set('token', dummyData.token)
       .send({ comment: 'djjddfdfhfghdghfdhffd' })
       .end((err, res) => {
@@ -237,7 +237,7 @@ describe('Broadcaster tests:', () => {
   it('it should return an error for an invalid Incident ID', (done) => {
     chai
       .request(app)
-      .patch('/api/v1/incident/50/comment')
+      .patch('/api/v2/incident/50/comment')
       .set('token', dummyData.token)
       .send()
       .end((err, res) => {
@@ -248,7 +248,7 @@ describe('Broadcaster tests:', () => {
   it('update incident location', (done) => {
     chai
       .request(app)
-      .patch(`/api/v1/incident/${id}/location`)
+      .patch(`/api/v2/incident/${id}/location`)
       .set('token', dummyData.token)
       .send({ location: '-1234 5678' })
       .end((err, res) => {
@@ -259,7 +259,7 @@ describe('Broadcaster tests:', () => {
   it('it should return an error for an invalid incident ID', (done) => {
     chai
       .request(app)
-      .patch('/api/v1/incident/70/location')
+      .patch('/api/v2/incident/70/location')
       .set('token', dummyData.token)
       .send()
       .end((err, res) => {
@@ -270,7 +270,7 @@ describe('Broadcaster tests:', () => {
   it('get all interventions', (done) => {
     chai
       .request(app)
-      .get('/api/v1/interventions')
+      .get('/api/v2/interventions')
       .set('token', dummyData.token)
       .send()
       .end((err, res) => {
@@ -281,7 +281,7 @@ describe('Broadcaster tests:', () => {
   it('it should return an error for an invalid incident ID', (done) => {
     chai
       .request(app)
-      .patch('/api/v1/incident')
+      .patch('/api/v2/incident')
       .set('token', dummyData.token)
       .send()
       .end((err, res) => {
@@ -292,7 +292,7 @@ describe('Broadcaster tests:', () => {
   it('get all redflags', (done) => {
     chai
       .request(app)
-      .get('/api/v1/red-flags')
+      .get('/api/v2/red-flags')
       .set('token', dummyData.token)
       .send()
       .end((err, res) => {
@@ -303,7 +303,7 @@ describe('Broadcaster tests:', () => {
   it('get a specific redflag ', (done) => {
     chai
       .request(app)
-      .get(`/api/v1/red-flags/${id}`)
+      .get(`/api/v2/red-flags/${id}`)
       .set('token', dummyData.token)
       .send()
       .end((err, res) => {
@@ -314,7 +314,7 @@ describe('Broadcaster tests:', () => {
   it('it should return an error for an invalid redflag ID', (done) => {
     chai
       .request(app)
-      .get('/api/v1/red-flags/100')
+      .get('/api/v2/red-flags/100')
       .set('token', dummyData.token)
       .send()
       .end((err, res) => {
@@ -325,7 +325,7 @@ describe('Broadcaster tests:', () => {
   it('new incident', (done) => {
     chai
       .request(app)
-      .post('/api/v1/incident')
+      .post('/api/v2/incident')
       .set('token', dummyData.token)
       .send(dummyData.incident2)
       .end((err, res) => {
@@ -337,7 +337,7 @@ describe('Broadcaster tests:', () => {
   it('get a specific intervention', (done) => {
     chai
       .request(app)
-      .get(`/api/v1/interventions/${id2}`)
+      .get(`/api/v2/interventions/${id2}`)
       .set('token', dummyData.token)
       .send()
       .end((err, res) => {
@@ -348,7 +348,7 @@ describe('Broadcaster tests:', () => {
   it('it should return an error for an invalid intervention ID', (done) => {
     chai
       .request(app)
-      .get('/api/v1/interventions/5')
+      .get('/api/v2/interventions/1000')
       .set('token', dummyData.token)
       .send()
       .end((err, res) => {
@@ -359,7 +359,7 @@ describe('Broadcaster tests:', () => {
   it('delete should  return an error if a user uses an invalid incident ID', (done) => {
     chai
       .request(app)
-      .delete('/api/v1/incident/7')
+      .delete('/api/v2/incident/7')
       .set('token', dummyData.token)
       .send()
       .end((err, res) => {
@@ -370,7 +370,7 @@ describe('Broadcaster tests:', () => {
   it('delete incident', (done) => {
     chai
       .request(app)
-      .delete(`/api/v1/incident/${id}`)
+      .delete(`/api/v2/incident/${id}`)
       .set('token', dummyData.token)
       .send()
       .end((err, res) => {

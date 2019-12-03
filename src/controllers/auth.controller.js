@@ -19,14 +19,14 @@ const userController = {
         username,
         'citizen',
       );
-      await db.insertIntoUser(user);
-      // const userData = data.rows[0];
+      const data = await db.insertIntoUser(user);
+      const userData = data.rows[0];
       return returnMessage(res, 201, 'User created successfully', {
-        userId: parseInt(user.userId, 0),
-        fullName: user.fullName,
-        email: user.email,
-        phoneNumber: user.phoneNumber,
-        username: user.username,
+        userId: parseInt(userData.userid, 0),
+        fullName: userData.fullname,
+        email: userData.email,
+        phoneNumber: userData.phonenumber,
+        username: userData.username,
       });
     } catch (error) {
       return returnMessage(res, 500, 'Internal server error');

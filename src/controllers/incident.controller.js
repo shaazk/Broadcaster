@@ -7,13 +7,13 @@ const incidentController = {
   createIncident: async (req, res) => {
     try {
       const {
-        createdOn, userid, title, type, location, images, videos, comment,
+        createdOn, title, type, location, images, videos, comment,
       } = req.body;
 
       const userIncident = new Incident(
         1,
         createdOn,
-        userid,
+        req.user.userid,
         title,
         type,
         location,
