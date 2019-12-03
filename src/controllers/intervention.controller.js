@@ -1,24 +1,23 @@
-import { incidents } from '../db/data';
 import returnMessage from '../helpers/response.helper';
+import db from '../db/db';
 
 const interventionController = {
 
-  getAllInterventions: (req, res) => {
+  getAllInterventions: async (req, res) => {
     try {
-      const interventions = incidents.filter(
-        (intervention) => intervention.type === 'intervention' && intervention.createdBy === req.user.userId,
-      );
+      const query = await db.userSelectBy('INCIDENT', 'type', 'intervention', req.user.userid);
+      const interventions = query.rows;
+
       return returnMessage(res, 200, { interventions });
     } catch (error) {
       return returnMessage(res, 500, 'Internal server error');
     }
   },
-  getSpecificIntervention: (req, res) => {
+  getSpecificIntervention: async (req, res) => {
     try {
-      const intervention = incidents.find(
-        (item) => item.incidentId.toString() === req.params.incidentId,
-      );
-      if (!intervention || intervention.type !== 'intervention') {
+      const query = await db.userSelectBy('INCIDENT', 'incidentid', req.params.incidentId, req.user.userid);
+      const incident = query.rows[0];
+      if (!incident || incident.type !== 'intervention') {
         return returnMessage(res, 404, {
           success: false,
           message: 'The intervention does not exist, check your ID',
@@ -26,7 +25,7 @@ const interventionController = {
       }
       return returnMessage(res, 200, {
         success: true,
-        details: intervention,
+        details: incident,
       });
     } catch (error) {
       return returnMessage(res, 500, 'Internal server error');

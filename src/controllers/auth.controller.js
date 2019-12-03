@@ -1,11 +1,11 @@
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
-import { users } from '../db/data';
 import returnMessage from '../helpers/response.helper';
 import User from '../model/user.model';
+import db from '../db/db';
 
 const userController = {
-  signup: (req, res) => {
+  signup: async (req, res) => {
     try {
       const user = new User(
         req.body.userId,
@@ -14,15 +14,19 @@ const userController = {
         req.body.password,
         req.body.phoneNumber,
         req.body.username,
+        'citizen',
       );
-      users.push(user);
-      return returnMessage(res, 201, 'User created successfully', {
-        userId: user.userId,
-        fullName: user.fullName,
-        email: user.email,
-        phoneNumber: user.phoneNumber,
-        username: user.username,
-      });
+      const data = await db.insertIntoUser(user);
+      if (data) {
+        return returnMessage(res, 201, 'User created successfully', {
+          userId: parseInt(user.userId, 0),
+          fullName: user.fullName,
+          email: user.email,
+          phoneNumber: user.phoneNumber,
+          username: user.username,
+        });
+      }
+      return returnMessage(res, 401, 'Data was not successfully recorded.');
     } catch (error) {
       return returnMessage(res, 500, 'Internal server error');
     }
@@ -30,7 +34,8 @@ const userController = {
 
   signin: async (req, res) => {
     try {
-      const loggedUser = users.find((user) => user.email === req.body.email);
+      const query = await db.selectBy('users', 'email', req.body.email);
+      const loggedUser = query.rows[0];
       let isPasswordCorrect;
 
       if (loggedUser) {
@@ -45,7 +50,7 @@ const userController = {
           {
             payload: {
               role: loggedUser.role,
-              id: loggedUser.userId,
+              id: loggedUser.userid,
             },
             ignoreExpiration: true,
           },
@@ -56,10 +61,10 @@ const userController = {
           200,
           'User is successfully logged in',
           {
-            userId: loggedUser.userId,
-            fullName: loggedUser.fullName,
+            userId: loggedUser.userid,
+            fullName: loggedUser.fullname,
             email: loggedUser.email,
-            phoneNumber: loggedUser.phoneNumber,
+            phoneNumber: loggedUser.phonenumber,
             username: loggedUser.username,
           },
           genToken,

@@ -1,36 +1,35 @@
-import { incidents } from '../db/data';
 import returnMessage from '../helpers/response.helper';
+import db from '../db/db';
 
 const redflagController = {
-  getAllRedflags: (req, res) => {
+
+  getAllRedflags: async (req, res) => {
     try {
-      const redflags = incidents.filter(
-        (redflag) => redflag.type === 'redflag' && redflag.createdBy === req.user.userId,
-      );
+      const query = await db.userSelectBy('INCIDENT', 'type', 'redflag', req.user.userid);
+      const redflags = query.rows;
+
       return returnMessage(res, 200, { redflags });
     } catch (error) {
       return returnMessage(res, 500, 'Internal server error');
     }
   },
-  getSpecificRedflag: (req, res) => {
+  getSpecificRedflag: async (req, res) => {
     try {
-      const redflag = incidents.find(
-        (item) => item.incidentId.toString() === req.params.incidentId,
-      );
-      if (!redflag || redflag.type !== 'redflag') {
+      const query = await db.userSelectBy('INCIDENT', 'incidentid', req.params.incidentId, req.user.userid);
+      const incident = query.rows[0];
+      if (!incident || incident.type !== 'redflag') {
         return returnMessage(res, 404, {
           success: false,
-          message: 'The red-flag does not exist, check your ID',
+          message: 'The intervention does not exist, check your ID',
         });
       }
       return returnMessage(res, 200, {
         success: true,
-        details: redflag,
+        details: incident,
       });
     } catch (error) {
       return returnMessage(res, 500, 'Internal server error');
     }
   },
-
 };
 export default redflagController;
