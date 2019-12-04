@@ -61,16 +61,19 @@ const userController = {
           },
           process.env.KEY,
         );
+        const {
+          userid, fullname, email, phonenumber, username,
+        } = loggedUser;
         return returnMessage(
           res,
           200,
           'User is successfully logged in',
           {
-            userId: loggedUser.userid,
-            fullName: loggedUser.fullname,
-            email: loggedUser.email,
-            phoneNumber: loggedUser.phonenumber,
-            username: loggedUser.username,
+            userId: userid,
+            fullName: fullname,
+            email,
+            phoneNumber: phonenumber,
+            username,
           },
           genToken,
         );
