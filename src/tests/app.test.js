@@ -1,7 +1,5 @@
 import chai from 'chai';
-import {
-  describe, it,
-} from 'mocha';
+import { describe, it } from 'mocha';
 import chaiHttp from 'chai-http';
 import app from '../app';
 import dummyData from './data.test';
@@ -17,6 +15,9 @@ describe('Broadcaster tests:', () => {
       .send(dummyData.signup)
       .end((err, res) => {
         chai.expect(res.status).to.eq(201);
+        chai.expect(res.body).to.have.own.property('status');
+        chai.expect(res.body).to.have.own.property('message');
+        chai.expect(res.body).to.have.own.property('data');
         done();
       });
   });
@@ -29,6 +30,7 @@ describe('Broadcaster tests:', () => {
       .send(data)
       .end((err, res) => {
         chai.expect(res.status).to.eq(409);
+        chai.expect(res.body).to.have.own.property('message');
         done();
       });
   });
@@ -40,6 +42,7 @@ describe('Broadcaster tests:', () => {
       .send(data)
       .end((err, res) => {
         chai.expect(res.status).to.eq(409);
+        chai.expect(res.body).to.have.own.property('message');
         done();
       });
   });
@@ -51,6 +54,7 @@ describe('Broadcaster tests:', () => {
       .send(dummyData.signup)
       .end((err, res) => {
         chai.expect(res.status).to.eq(409);
+        chai.expect(res.body).to.have.own.property('message');
         done();
       });
   });
@@ -62,6 +66,8 @@ describe('Broadcaster tests:', () => {
       .send(dummyData.signin)
       .end((err, res) => {
         chai.expect(res.status).to.eq(200);
+        chai.expect(res.body).to.have.own.property('message');
+        chai.expect(res.body).to.have.own.property('data');
         dummyData.token = res.body.token;
         done();
       });
@@ -74,6 +80,7 @@ describe('Broadcaster tests:', () => {
       .send(dummyData.invalidPassword)
       .end((err, res) => {
         chai.expect(res.status).to.eq(401);
+        chai.expect(res.body).to.have.own.property('message');
         done();
       });
   });
@@ -86,6 +93,7 @@ describe('Broadcaster tests:', () => {
       .send(dummyData.incident)
       .end((err, res) => {
         chai.expect(res.status).to.eq(201);
+        chai.expect(res.body).to.have.own.property('message');
         done();
       });
   });
@@ -98,6 +106,7 @@ describe('Broadcaster tests:', () => {
       .send(data)
       .end((err, res) => {
         chai.expect(res.status).to.eq(409);
+        chai.expect(res.body).to.have.own.property('message');
         done();
       });
   });
@@ -109,6 +118,7 @@ describe('Broadcaster tests:', () => {
       .send(data)
       .end((err, res) => {
         chai.expect(res.status).to.eq(409);
+        chai.expect(res.body).to.have.own.property('message');
         done();
       });
   });
@@ -120,6 +130,7 @@ describe('Broadcaster tests:', () => {
       .send(data)
       .end((err, res) => {
         chai.expect(res.status).to.eq(409);
+        chai.expect(res.body).to.have.own.property('message');
         done();
       });
   });
@@ -131,6 +142,7 @@ describe('Broadcaster tests:', () => {
       .send(data)
       .end((err, res) => {
         chai.expect(res.status).to.eq(409);
+        chai.expect(res.body).to.have.own.property('message');
         done();
       });
   });
@@ -142,6 +154,7 @@ describe('Broadcaster tests:', () => {
       .send(data)
       .end((err, res) => {
         chai.expect(res.status).to.eq(409);
+        chai.expect(res.body).to.have.own.property('message');
         done();
       });
   });
@@ -153,6 +166,7 @@ describe('Broadcaster tests:', () => {
       .send(data)
       .end((err, res) => {
         chai.expect(res.status).to.eq(409);
+        chai.expect(res.body).to.have.own.property('message');
         done();
       });
   });
@@ -164,6 +178,7 @@ describe('Broadcaster tests:', () => {
       .send(data)
       .end((err, res) => {
         chai.expect(res.status).to.eq(409);
+        chai.expect(res.body).to.have.own.property('message');
         done();
       });
   });
@@ -175,6 +190,7 @@ describe('Broadcaster tests:', () => {
       .send(data)
       .end((err, res) => {
         chai.expect(res.status).to.eq(409);
+        chai.expect(res.body).to.have.own.property('message');
         done();
       });
   });
@@ -186,6 +202,7 @@ describe('Broadcaster tests:', () => {
       .send(data)
       .end((err, res) => {
         chai.expect(res.status).to.eq(409);
+        chai.expect(res.body).to.have.own.property('message');
         done();
       });
   });
@@ -197,6 +214,7 @@ describe('Broadcaster tests:', () => {
       .send(dummyData.incident)
       .end((err, res) => {
         chai.expect(res.status).to.eq(201);
+        chai.expect(res.body).to.have.own.property('message');
         done();
       });
   });
@@ -208,6 +226,7 @@ describe('Broadcaster tests:', () => {
       .send(dummyData.incident)
       .end((err, res) => {
         chai.expect(res.status).to.eq(201);
+        chai.expect(res.body).to.have.own.property('message');
         done();
       });
   });
@@ -219,6 +238,7 @@ describe('Broadcaster tests:', () => {
       .send(dummyData.incident)
       .end((err, res) => {
         chai.expect(res.status).to.eq(201);
+        chai.expect(res.body).to.have.own.property('message');
         id = res.body.message.id;
         done();
       });
@@ -231,6 +251,7 @@ describe('Broadcaster tests:', () => {
       .send({ comment: 'djjddfdfhfghdghfdhffd' })
       .end((err, res) => {
         chai.expect(res.status).to.eq(200);
+        chai.expect(res.body).to.have.own.property('message');
         done();
       });
   });
@@ -242,6 +263,7 @@ describe('Broadcaster tests:', () => {
       .send()
       .end((err, res) => {
         chai.expect(res.status).to.eq(404);
+        chai.expect(res.body).to.have.own.property('message');
         done();
       });
   });
@@ -253,6 +275,7 @@ describe('Broadcaster tests:', () => {
       .send({ location: '-1234 5678' })
       .end((err, res) => {
         chai.expect(res.status).to.eq(200);
+        chai.expect(res.body).to.have.own.property('message');
         done();
       });
   });
@@ -264,39 +287,7 @@ describe('Broadcaster tests:', () => {
       .send()
       .end((err, res) => {
         chai.expect(res.status).to.eq(404);
-        done();
-      });
-  });
-  it('update incident status', (done) => {
-    chai
-      .request(app)
-      .patch(`/api/v2/incident/${id}/status`)
-      .set('token', dummyData.adminToken)
-      .send(dummyData.incident)
-      .end((err, res) => {
-        chai.expect(res.status).to.eq(200);
-        done();
-      });
-  });
-  it('it should return an error for invalid incident ID', (done) => {
-    chai
-      .request(app)
-      .patch(`/api/v2/incident/${id}/status`)
-      .set('token', dummyData.token)
-      .send()
-      .end((err, res) => {
-        chai.expect(res.status).to.eq(401);
-        done();
-      });
-  });
-  it('it should return an error for invalid incident ID', (done) => {
-    chai
-      .request(app)
-      .patch('/api/v2/incident/700/status')
-      .set('token', dummyData.adminToken)
-      .send()
-      .end((err, res) => {
-        chai.expect(res.status).to.eq(404);
+        chai.expect(res.body).to.have.own.property('message');
         done();
       });
   });
@@ -308,6 +299,7 @@ describe('Broadcaster tests:', () => {
       .send()
       .end((err, res) => {
         chai.expect(res.status).to.eq(200);
+        chai.expect(res.body).to.have.own.property('message');
         done();
       });
   });
@@ -330,6 +322,7 @@ describe('Broadcaster tests:', () => {
       .send()
       .end((err, res) => {
         chai.expect(res.status).to.eq(200);
+        chai.expect(res.body).to.have.own.property('message');
         done();
       });
   });
@@ -341,6 +334,7 @@ describe('Broadcaster tests:', () => {
       .send()
       .end((err, res) => {
         chai.expect(res.status).to.eq(200);
+        chai.expect(res.body).to.have.own.property('message');
         done();
       });
   });
@@ -352,6 +346,7 @@ describe('Broadcaster tests:', () => {
       .send()
       .end((err, res) => {
         chai.expect(res.status).to.eq(404);
+        chai.expect(res.body).to.have.own.property('message');
         done();
       });
   });
@@ -363,6 +358,7 @@ describe('Broadcaster tests:', () => {
       .send(dummyData.incident2)
       .end((err, res) => {
         chai.expect(res.status).to.eq(201);
+        chai.expect(res.body).to.have.own.property('message');
         id2 = res.body.message.id;
         done();
       });
@@ -375,6 +371,7 @@ describe('Broadcaster tests:', () => {
       .send()
       .end((err, res) => {
         chai.expect(res.status).to.eq(200);
+        chai.expect(res.body).to.have.own.property('message');
         done();
       });
   });
@@ -386,6 +383,7 @@ describe('Broadcaster tests:', () => {
       .send()
       .end((err, res) => {
         chai.expect(res.status).to.eq(404);
+        chai.expect(res.body).to.have.own.property('message');
         done();
       });
   });
@@ -408,6 +406,7 @@ describe('Broadcaster tests:', () => {
       .send()
       .end((err, res) => {
         chai.expect(res.status).to.eq(200);
+        chai.expect(res.body).to.have.own.property('message');
         done();
       });
   });
