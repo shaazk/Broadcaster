@@ -10,6 +10,7 @@ const router1 = express.Router();
 router1.post('/incident', verifyToken, validateIncident, incidentController.createIncident);
 router1.patch('/incident/:incidentId/comment', verifyToken, incidentController.updateComment);
 router1.patch('/incident/:incidentId/location', verifyToken, incidentController.updateLocation);
+router1.get('/interventions/:incidentId', verifyToken, interventionController.getSpecificIntervention);
 router1.delete('/incident/:incidentId', verifyToken, incidentController.deleteIncident);
 
 // red-flags
@@ -19,5 +20,8 @@ router1.get('/red-flags/:incidentId', verifyToken, redflagController.getSpecific
 // interventions
 router1.get('/interventions', verifyToken, interventionController.getAllInterventions);
 router1.get('/interventions/:incidentId', verifyToken, interventionController.getSpecificIntervention);
+
+// Admin
+router1.patch('/incident/:incidentId/status', verifyToken, incidentController.updateStatus);
 
 export default router1;

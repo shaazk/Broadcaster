@@ -267,6 +267,39 @@ describe('Broadcaster tests:', () => {
         done();
       });
   });
+  it('update incident status', (done) => {
+    chai
+      .request(app)
+      .patch(`/api/v2/incident/${id}/status`)
+      .set('token', dummyData.adminToken)
+      .send(dummyData.incident)
+      .end((err, res) => {
+        chai.expect(res.status).to.eq(200);
+        done();
+      });
+  });
+  it('it should return an error for invalid incident ID', (done) => {
+    chai
+      .request(app)
+      .patch(`/api/v2/incident/${id}/status`)
+      .set('token', dummyData.token)
+      .send()
+      .end((err, res) => {
+        chai.expect(res.status).to.eq(401);
+        done();
+      });
+  });
+  it('it should return an error for invalid incident ID', (done) => {
+    chai
+      .request(app)
+      .patch('/api/v2/incident/700/status')
+      .set('token', dummyData.adminToken)
+      .send()
+      .end((err, res) => {
+        chai.expect(res.status).to.eq(404);
+        done();
+      });
+  });
   it('get all interventions', (done) => {
     chai
       .request(app)

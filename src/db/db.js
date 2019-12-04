@@ -139,6 +139,7 @@ class Database {
         'Mutesi Sharon K',
         'admin@gmail.com',
         '$2b$10$s4RN8ri.6or1GwLHRVRpW.r6YMfD2tkTK0NV.SV01KuwKQQ71YcZG',
+        '0787555555',
         'tesi',
         'admin',
       );
