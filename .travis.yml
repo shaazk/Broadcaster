@@ -13,6 +13,6 @@ before_script:
 scripts:
   - npm run test
 services:
-  - postgres
+  - postgresql
 after_success:
   - npm run coverage
