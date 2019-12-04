@@ -165,7 +165,6 @@ class Database {
 
   static async deleteIfExist(table, column, value, userId) {
     const conn = this.connection();
-    console.log(value);
     const result = await conn.query(`DELETE FROM ${table} WHERE status='pending' AND createdby='${userId}' AND ${column}=${value};`);
     await conn.end();
     return result;
