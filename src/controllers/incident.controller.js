@@ -23,8 +23,9 @@ const incidentController = {
         'pending',
       );
       const query = await db.insertIntoIncident(userIncident);
+      const { incidentid } = query.rows[0];
       return returnMessage(res, 201, {
-        id: query.rows[0].incidentid,
+        id: incidentid,
         message: `Created ${userIncident.type} record`,
       });
     } catch (error) {
@@ -37,16 +38,17 @@ const incidentController = {
       if (req.user.role === 'citizen') {
         const { comment } = req.body;
         const { incidentId } = req.params;
+        const { userid } = req.user;
         const query = await db.updateIncident(
           parseInt(incidentId, 0),
           'comment',
           comment,
-          req.user.userid,
+          userid,
         );
 
         if (query.rowCount === 1) {
           return returnMessage(res, 200, {
-            id: req.params.incidentId,
+            id: incidentId,
             message: 'Updated red-flag record’s comment',
           });
         }
@@ -66,15 +68,16 @@ const incidentController = {
       if (req.user.role === 'citizen') {
         const { location } = req.body;
         const { incidentId } = req.params;
+        const { userid } = req.user;
         const query = await db.updateIncident(
           parseInt(incidentId, 0),
           'location',
           location,
-          req.user.userid,
+          userid,
         );
         if (query.rowCount === 1) {
           return returnMessage(res, 200, {
-            id: req.params.incidentId,
+            id: incidentId,
             message: 'Updated red-flag record’s location',
           });
         }
@@ -91,11 +94,13 @@ const incidentController = {
   },
   deleteIncident: async (req, res) => {
     try {
+      const { userid } = req.user;
+      const { incidentId } = req.params;
       const query = await db.deleteIfExist(
         'incident',
         'incidentid',
-        parseInt(req.params.incidentId, 0),
-        req.user.userid,
+        parseInt(incidentId, 0),
+        userid,
       );
 
       if (query.rowCount === 1) {
@@ -106,6 +111,35 @@ const incidentController = {
 
       return returnMessage(res, 404, {
         message: 'invalid ID',
+      });
+    } catch (error) {
+      return returnMessage(res, 500, 'Internal server error');
+    }
+  },
+  updateStatus: async (req, res) => {
+    try {
+      if (req.user.role === 'admin') {
+        const { status } = req.body;
+        const { incidentId } = req.params;
+        const { userid } = req.user;
+        const query = await db.updateIncident(
+          parseInt(incidentId, 0),
+          'status',
+          status,
+          userid,
+        );
+        if (query.rowCount === 1) {
+          return returnMessage(res, 200, {
+            id: incidentId,
+            message: 'Updated incident record’s status',
+          });
+        }
+        return returnMessage(res, 404, {
+          message: 'Incident not found',
+        });
+      }
+      return returnMessage(res, 401, {
+        message: 'Unauthorised access',
       });
     } catch (error) {
       return returnMessage(res, 500, 'Internal server error');

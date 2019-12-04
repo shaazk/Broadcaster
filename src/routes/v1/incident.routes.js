@@ -20,4 +20,7 @@ router.get('/red-flags/:incidentId', verifyToken, redflagController.getSpecificR
 router.get('/interventions', verifyToken, interventionController.getAllInterventions);
 router.get('/interventions/:incidentId', verifyToken, interventionController.getSpecificIntervention);
 
+// Admin
+router.patch('/incident/:incidentId/status', verifyToken, incidentController.updateStatus);
+
 export default router;
