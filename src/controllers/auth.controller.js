@@ -8,10 +8,10 @@ const userController = {
   signup: async (req, res) => {
     try {
       const {
-        userId, fullName, email, password, phoneNumber, username,
+        fullName, email, password, phoneNumber, username,
       } = req.body;
       const user = new User(
-        userId,
+        '',
         fullName,
         email,
         password,
@@ -22,7 +22,7 @@ const userController = {
       const data = await db.insertIntoUser(user);
       const userData = data.rows[0];
       return returnMessage(res, 201, 'User created successfully', {
-        userId: parseInt(userData.userid, 0),
+        userId: userData.userid,
         fullName: userData.fullname,
         email: userData.email,
         phoneNumber: userData.phonenumber,
@@ -62,7 +62,7 @@ const userController = {
           process.env.KEY,
         );
         const {
-          userid, fullname, email, phonenumber, username,
+          userid, nationalid, fullname, email, phonenumber, username,
         } = loggedUser;
         return returnMessage(
           res,
@@ -70,6 +70,7 @@ const userController = {
           'User is successfully logged in',
           {
             userId: userid,
+            nationalId: nationalid,
             fullName: fullname,
             email,
             phoneNumber: phonenumber,

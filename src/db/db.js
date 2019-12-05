@@ -23,7 +23,7 @@ class Database {
   static async selectBy(table, column, value) {
     const con = Database.connection();
     const result = await con.query(
-      `SELECT * FROM ${table} WHERE ${column}='${value}'`,
+      `SELECT * FROM ${table} WHERE ${column}='${value}';`,
     );
     await con.end();
     return result;
@@ -32,15 +32,15 @@ class Database {
   static async userSelectBy(table, column, value, userId) {
     const con = Database.connection();
     const result = await con.query(
-      `SELECT * FROM ${table} WHERE ${column}='${value}' AND createdby='${userId}'`,
+      `SELECT * FROM ${table} WHERE ${column}='${value}' AND createdby='${userId}';`,
     );
     await con.end();
     return result;
   }
 
-  static async selectUser(email, userId) {
+  static async selectUser(email) {
     const con = Database.connection();
-    const result = await con.query(`SELECT COUNT(1) FROM users WHERE email = '${email}' OR  userId = '${userId}';`);
+    const result = await con.query(`SELECT COUNT(1) FROM users WHERE email = '${email}';`);
     await con.end();
     return result;
   }
@@ -48,7 +48,7 @@ class Database {
   static async updateIncident(id, column, value, userId) {
     const con = Database.connection();
     const result = await con.query(
-      `UPDATE Incident SET ${column} = '${value}' WHERE incidentid=${id} AND createdBy='${userId}' AND status='pending';`,
+      `UPDATE Incident SET ${column} = '${value}' WHERE incidentid=${id} AND createdBy='${userId}' AND status='pending' returning *;`,
     );
     await con.end();
     return result;
@@ -57,7 +57,6 @@ class Database {
   static async insertIntoUser(data) {
     const con = Database.connection();
     const newUser = await con.query(`Insert into users(
-      userId,
       fullName,
       email,
       password,
@@ -65,7 +64,6 @@ class Database {
       username,
       role
     ) values(
-      '${data.userId}',
       '${data.fullName}',
       '${data.email}',
       '${data.password}',
@@ -106,7 +104,7 @@ class Database {
     const con = Database.connection();
     await con.query(`
           CREATE TABLE IF NOT EXISTS USERS (
-            userId VARCHAR(250),
+            userId SERIAL,
             fullName VARCHAR(250),
             email VARCHAR(250),
             username VARCHAR(250),
@@ -119,7 +117,7 @@ class Database {
           CREATE TABLE IF NOT EXISTS INCIDENT (
             IncidentId SERIAL,
             createdOn TIMESTAMP NOT NULL DEFAULT NOW(),
-            createdBy VARCHAR(250) REFERENCES users(userId) ON DELETE CASCADE,
+            createdBy INTEGER REFERENCES users(userId) ON DELETE CASCADE,
             title VARCHAR (200),
             type VARCHAR(300),
             location VARCHAR(250),
@@ -135,15 +133,15 @@ class Database {
     );
     if (result.rows[0].count === '0') {
       const user = new User(
-        '1234567890123459',
+        '',
         'Mutesi Sharon K',
         'admin@gmail.com',
         '$2b$10$s4RN8ri.6or1GwLHRVRpW.r6YMfD2tkTK0NV.SV01KuwKQQ71YcZG',
+        '0787555555',
         'tesi',
         'admin',
       );
       await con.query(`Insert into users(
-        userId,
         fullName,
         email,
         password,
@@ -151,7 +149,6 @@ class Database {
         username,
         role
       ) values(
-        '${user.userId}',
         '${user.fullName}',
         '${user.email}',
         '${user.password}',
