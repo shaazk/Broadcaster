@@ -232,19 +232,7 @@ describe('Broadcaster tests:', () => {
         done();
       });
   });
-  // it('update incident comment', (done) => {
-  //   chai
-  //     .request(app)
-  //     .patch(`/api/v2/incident/${id}/comment`)
-  //     .set('token', dummyData.token)
-  //     .send({ comment: 'djjddfdfhfghdghfdhffd' })
-  //     .end((err, res) => {
-  //       chai.expect(res.status).to.eq(200);
-  //       chai.expect(res.body).to.have.own.property('message');
-  //       chai.expect(res.body.message).to.eq('Updated red-flag record’s comment');
-  //       done();
-  //     });
-  // });
+
   it('it should return an error for an invalid Incident ID', (done) => {
     chai
       .request(app)
@@ -259,19 +247,7 @@ describe('Broadcaster tests:', () => {
         done();
       });
   });
-  // it('update incident location', (done) => {
-  //   chai
-  //     .request(app)
-  //     .patch(`/api/v2/incident/${id}/location`)
-  //     .set('token', dummyData.token)
-  //     .send({ location: '-1234 5678' })
-  //     .end((err, res) => {
-  //       chai.expect(res.status).to.eq(200);
-  //       chai.expect(res.body).to.have.own.property('message');
-  //       chai.expect(res.body.message).to.eq('Updated red-flag record’s location');
-  //       done();
-  //     });
-  // });
+
   it('it should return an error for an invalid incident ID', (done) => {
     chai
       .request(app)
@@ -320,25 +296,7 @@ describe('Broadcaster tests:', () => {
         done();
       });
   });
-  // it('get a specific redflag ', (done) => {
-  //   chai
-  //     .request(app)
-  //     .get(`/api/v2/red-flags/${id}`)
-  //     .set('token', dummyData.token)
-  //     .send()
-  //     .end((err, res) => {
-  //       chai.expect(res.status).to.eq(200);
-  //       chai.expect(res.body).to.have.own.property('message');
-  //       chai.expect(res.body.data.title).to.eq(dummyData.incident.title);
-  //       chai.expect(res.body.data.type).to.eq(dummyData.incident.type);
-  //       chai.expect(res.body.data.location).to.eq(dummyData.incident.location);
-  //       chai.expect(res.body.data.images).to.eq(dummyData.incident.images);
-  //       chai.expect(res.body.data.videos).to.eq(dummyData.incident.videos);
-  //       chai.expect(res.body.data.comment).to.eq(dummyData.incident.comment);
 
-  //       done();
-  //     });
-  // });
   it('it should return an error for an invalid redflag ID', (done) => {
     chai
       .request(app)
@@ -366,25 +324,7 @@ describe('Broadcaster tests:', () => {
         done();
       });
   });
-  // it('get a specific intervention', (done) => {
-  //   chai
-  //     .request(app)
-  //     .get(`/api/v2/interventions/${id2}`)
-  //     .set('token', dummyData.token)
-  //     .send()
-  //     .end((err, res) => {
-  //       chai.expect(res.status).to.eq(200);
-  //       chai.expect(res.body).to.have.own.property('message');
-  //       chai.expect(res.body.data.title).to.eq(dummyData.incident2.title);
-  //       chai.expect(res.body.data.type).to.eq(dummyData.incident2.type);
-  //       chai.expect(res.body.data.location).to.eq(dummyData.incident2.location);
-  //       chai.expect(res.body.data.images).to.eq(dummyData.incident2.images);
-  //       chai.expect(res.body.data.videos).to.eq(dummyData.incident2.videos);
-  //       chai.expect(res.body.data.comment).to.eq(dummyData.incident2.comment);
 
-  //       done();
-  //     });
-  // });
   it('it should return an error for an invalid intervention ID', (done) => {
     chai
       .request(app)
@@ -410,17 +350,5 @@ describe('Broadcaster tests:', () => {
         done();
       });
   });
-  // it('delete incident', (done) => {
-  //   chai
-  //     .request(app)
-  //     .delete(`/api/v2/incident/${id}`)
-  //     .set('token', dummyData.token)
-  //     .send()
-  //     .end((err, res) => {
-  //       chai.expect(res.status).to.eq(200);
-  //       chai.expect(res.body).to.have.own.property('message');
-  //       chai.expect(res.body.message).to.eq('Red-flag successfully deleted');
-  //       done();
-  //     });
-  // });
+
 });

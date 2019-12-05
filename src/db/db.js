@@ -54,6 +54,15 @@ class Database {
     return result;
   }
 
+  static async adminUpdateIncident(id, column, value) {
+    const con = Database.connection();
+    const result = await con.query(
+      `UPDATE Incident SET ${column} = '${value}' WHERE incidentid=${id} AND status='pending' returning *;`,
+    );
+    await con.end();
+    return result;
+  }
+
   static async insertIntoUser(data) {
     const con = Database.connection();
     const newUser = await con.query(`Insert into users(

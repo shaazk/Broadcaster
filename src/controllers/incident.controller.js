@@ -90,12 +90,10 @@ const incidentController = {
     try {
       const { status } = req.body;
       const { incidentId } = req.params;
-      const { userid } = req.user;
-      const query = await db.updateIncident(
+      const query = await db.adminUpdateIncident(
         parseInt(incidentId, 0),
         'status',
         status,
-        userid,
       );
       if (query.rowCount === 1) {
         return returnMessage(res, 200, 'Updated incident record’s status', query.rows[0]);
