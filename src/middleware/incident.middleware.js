@@ -3,10 +3,6 @@ import returnMessage from '../helpers/response.helper';
 
 const schema = {
   createIncident: Joi.object({
-    createdOn: Joi.date().required(),
-    createdBy: Joi.number()
-      .min(16)
-      .required(),
     title: Joi.string()
       .min(3)
       .required(),
@@ -29,7 +25,7 @@ const validateIncident = async (req, res, next) => {
     await schema.createIncident.validateAsync(req.body);
     next();
   } catch (error) {
-    return returnMessage(res, 500, 'Internal server error');
+    return returnMessage(res, 400, error.details[0].message);
   }
   return 0;
 };

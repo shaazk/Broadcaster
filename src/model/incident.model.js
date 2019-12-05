@@ -1,7 +1,5 @@
 class Incident {
-  constructor(IncidentId, createdOn, createdBy, title, type, location, images, videos, comment, status = 'pending') {
-    this.incidentId = IncidentId;
-    this.createdOn = createdOn;
+  constructor(createdBy, title, type, location, images, videos, comment, status = 'pending') {
     this.createdBy = createdBy;
     this.title = title;
     this.type = type;

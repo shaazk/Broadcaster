@@ -18,10 +18,7 @@ const redflagController = {
       const query = await db.userSelectBy('INCIDENT', 'incidentid', req.params.incidentId, req.user.userid);
       const incident = query.rows[0];
       if (!incident || incident.type !== 'redflag') {
-        return returnMessage(res, 404, {
-          success: false,
-          message: 'The intervention does not exist, check your ID',
-        });
+        return returnMessage(res, 404, 'The intervention does not exist, check your ID');
       }
       return returnMessage(res, 200, {
         success: true,

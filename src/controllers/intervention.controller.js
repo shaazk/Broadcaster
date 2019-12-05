@@ -18,15 +18,9 @@ const interventionController = {
       const query = await db.userSelectBy('INCIDENT', 'incidentid', req.params.incidentId, req.user.userid);
       const incident = query.rows[0];
       if (!incident || incident.type !== 'intervention') {
-        return returnMessage(res, 404, {
-          success: false,
-          message: 'The intervention does not exist, check your ID',
-        });
+        return returnMessage(res, 404, 'The intervention does not exist, check your ID');
       }
-      return returnMessage(res, 200, {
-        success: true,
-        details: incident,
-      });
+      return returnMessage(res, 200, incident);
     } catch (error) {
       return returnMessage(res, 500, 'Internal server error');
     }
