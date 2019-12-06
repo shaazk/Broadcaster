@@ -34,7 +34,7 @@ describe('Broadcaster tests:', () => {
       .post('/api/v2/auth/signup')
       .send(data)
       .end((err, res) => {
-        chai.expect(res.status).to.eq(409);
+        chai.expect(res.status).to.eq(400);
         chai.expect(res.body).to.have.own.property('message');
         done();
       });
@@ -46,7 +46,7 @@ describe('Broadcaster tests:', () => {
       .post('/api/v2/auth/signup')
       .send(data)
       .end((err, res) => {
-        chai.expect(res.status).to.eq(409);
+        chai.expect(res.status).to.eq(400);
         chai.expect(res.body).to.have.own.property('message');
         done();
       });
@@ -117,35 +117,12 @@ describe('Broadcaster tests:', () => {
       .post('/api/v2/auth/signup')
       .send(data)
       .end((err, res) => {
-        chai.expect(res.status).to.eq(409);
+        chai.expect(res.status).to.eq(400);
         chai.expect(res.body).to.have.own.property('message');
         done();
       });
   });
-  it('should return error if date field is not supplied', (done) => {
-    const { createdOn, ...data } = dummyData.incident;
-    chai
-      .request(app)
-      .post('/api/v2/auth/signup')
-      .send(data)
-      .end((err, res) => {
-        chai.expect(res.status).to.eq(409);
-        chai.expect(res.body).to.have.own.property('message');
-        done();
-      });
-  });
-  it('should return error if createdBy field is not supplied', (done) => {
-    const { createdBy, ...data } = dummyData.incident;
-    chai
-      .request(app)
-      .post('/api/v2/auth/signup')
-      .send(data)
-      .end((err, res) => {
-        chai.expect(res.status).to.eq(409);
-        chai.expect(res.body).to.have.own.property('message');
-        done();
-      });
-  });
+
   it('should return error if Label field is not supplied', (done) => {
     const { title, ...data } = dummyData.incident;
     chai
@@ -153,7 +130,7 @@ describe('Broadcaster tests:', () => {
       .post('/api/v2/auth/signup')
       .send(data)
       .end((err, res) => {
-        chai.expect(res.status).to.eq(409);
+        chai.expect(res.status).to.eq(400);
         chai.expect(res.body).to.have.own.property('message');
         done();
       });
@@ -165,7 +142,7 @@ describe('Broadcaster tests:', () => {
       .post('/api/v2/auth/signup')
       .send(data)
       .end((err, res) => {
-        chai.expect(res.status).to.eq(409);
+        chai.expect(res.status).to.eq(400);
         chai.expect(res.body).to.have.own.property('message');
         done();
       });
@@ -177,7 +154,7 @@ describe('Broadcaster tests:', () => {
       .post('/api/v2/auth/signup')
       .send(data)
       .end((err, res) => {
-        chai.expect(res.status).to.eq(409);
+        chai.expect(res.status).to.eq(400);
         chai.expect(res.body).to.have.own.property('message');
         done();
       });
@@ -189,7 +166,7 @@ describe('Broadcaster tests:', () => {
       .post('/api/v2/auth/signup')
       .send(data)
       .end((err, res) => {
-        chai.expect(res.status).to.eq(409);
+        chai.expect(res.status).to.eq(400);
         chai.expect(res.body).to.have.own.property('message');
         done();
       });
@@ -201,7 +178,7 @@ describe('Broadcaster tests:', () => {
       .post('/api/v2/auth/signup')
       .send(data)
       .end((err, res) => {
-        chai.expect(res.status).to.eq(409);
+        chai.expect(res.status).to.eq(400);
         chai.expect(res.body).to.have.own.property('message');
         done();
       });
@@ -213,7 +190,7 @@ describe('Broadcaster tests:', () => {
       .post('/api/v2/auth/signup')
       .send(data)
       .end((err, res) => {
-        chai.expect(res.status).to.eq(409);
+        chai.expect(res.status).to.eq(400);
         chai.expect(res.body).to.have.own.property('message');
         done();
       });

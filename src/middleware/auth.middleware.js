@@ -47,7 +47,7 @@ export const validateSignup = async (req, res, next) => {
   try {
     await schema.signup.validateAsync(req.body);
   } catch (error) {
-    return returnMessage(res, 409, error.details[0].message);
+    return returnMessage(res, 400, error.details[0].message);
   }
   next();
   return 0;
